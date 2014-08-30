@@ -1,5 +1,6 @@
 package com.appsolution.bancoldex;
 
+import de.passsy.holocircularprogressbar.HoloCircularProgressBar;
 import android.support.v7.app.ActionBarActivity;
 import android.app.Activity;
 import android.support.v7.app.ActionBar;
@@ -9,6 +10,7 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
@@ -19,6 +21,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -53,7 +57,6 @@ public class NavigationDrawerFragment extends Fragment {
 	private ActionBarDrawerToggle mDrawerToggle;
 
 	private DrawerLayout mDrawerLayout;
-	private ListView mDrawerListView;
 	private View mFragmentContainerView;
 
 	private int mCurrentSelectedPosition = 0;
@@ -92,17 +95,50 @@ public class NavigationDrawerFragment extends Fragment {
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-		mDrawerListView = (ListView) inflater.inflate(R.layout.fragment_navigation_drawer, container, false);
-		mDrawerListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-			@Override
-			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-				selectItem(position);
-			}
-		});
-		mDrawerListView.setAdapter(new ArrayAdapter<String>(getActionBar().getThemedContext(), android.R.layout.simple_list_item_1, android.R.id.text1, new String[] {
-				getString(R.string.title_section1), getString(R.string.title_section2), getString(R.string.title_section3), }));
-		mDrawerListView.setItemChecked(mCurrentSelectedPosition, true);
-		return mDrawerListView;
+		LinearLayout mainLayout = (LinearLayout) inflater.inflate(R.layout.fragment_navigation_drawer, container, false);
+
+		// mDrawerListView = (ListView)
+		// inflater.inflate(R.layout.fragment_navigation_drawer, container,
+		// false);
+		// mDrawerListView.setOnItemClickListener(new
+		// AdapterView.OnItemClickListener() {
+		// @Override
+		// public void onItemClick(AdapterView<?> parent, View view, int
+		// position, long id) {
+		// selectItem(position);
+		// }
+		// });
+		// mDrawerListView.setAdapter(new
+		// ArrayAdapter<String>(getActionBar().getThemedContext(),
+		// android.R.layout.simple_list_item_1, android.R.id.text1, new String[]
+		// {
+		// getString(R.string.title_section1),
+		// getString(R.string.title_section2),
+		// getString(R.string.title_section3), }));
+		// mDrawerListView.setItemChecked(mCurrentSelectedPosition, true);
+		// return mDrawerListView;
+
+		HoloCircularProgressBar mHoloCircularProgressBar = (HoloCircularProgressBar) mainLayout.findViewById(R.id.holoCircularProgressBar1);
+
+		mHoloCircularProgressBar.setMarkerEnabled(false);
+		mHoloCircularProgressBar.setProgress(0.375f);
+		mHoloCircularProgressBar.setRotation(225f);
+		mHoloCircularProgressBar.setThumbEnabled(false);
+		mHoloCircularProgressBar.setProgressColor(Color.argb(255, 216,152,17));
+		mHoloCircularProgressBar.setProgressBackgroundColor(Color.TRANSPARENT);
+		
+
+		HoloCircularProgressBar mHoloCircularProgressBar2 = (HoloCircularProgressBar) mainLayout.findViewById(R.id.holoCircularProgressBar2);
+
+		mHoloCircularProgressBar2.setMarkerEnabled(false);
+		mHoloCircularProgressBar2.setProgress(0.75f);
+		mHoloCircularProgressBar2.setRotation(90f);
+		mHoloCircularProgressBar2.setThumbEnabled(false);
+		mHoloCircularProgressBar2.setProgressColor(Color.argb(255, 145,183,17));
+		mHoloCircularProgressBar2.setProgressBackgroundColor(Color.TRANSPARENT);
+
+		return mainLayout;
+
 	}
 
 	public boolean isDrawerOpen() {
@@ -196,16 +232,16 @@ public class NavigationDrawerFragment extends Fragment {
 	}
 
 	private void selectItem(int position) {
-		mCurrentSelectedPosition = position;
-		if (mDrawerListView != null) {
-			mDrawerListView.setItemChecked(position, true);
-		}
-		if (mDrawerLayout != null) {
-			mDrawerLayout.closeDrawer(mFragmentContainerView);
-		}
-		if (mCallbacks != null) {
-			mCallbacks.onNavigationDrawerItemSelected(position);
-		}
+		// mCurrentSelectedPosition = position;
+		// if (mDrawerListView != null) {
+		// mDrawerListView.setItemChecked(position, true);
+		// }
+		// if (mDrawerLayout != null) {
+		// mDrawerLayout.closeDrawer(mFragmentContainerView);
+		// }
+		// if (mCallbacks != null) {
+		// mCallbacks.onNavigationDrawerItemSelected(position);
+		// }
 	}
 
 	@Override
@@ -253,11 +289,6 @@ public class NavigationDrawerFragment extends Fragment {
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		if (mDrawerToggle.onOptionsItemSelected(item)) {
-			return true;
-		}
-
-		if (item.getItemId() == R.id.action_example) {
-			Toast.makeText(getActivity(), "Example action.", Toast.LENGTH_SHORT).show();
 			return true;
 		}
 
