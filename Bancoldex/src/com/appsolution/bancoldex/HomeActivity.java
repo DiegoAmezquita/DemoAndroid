@@ -38,6 +38,8 @@ public class HomeActivity extends ActionBarActivity implements NavigationDrawerF
 		mNavigationDrawerFragment = (NavigationDrawerFragment) getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
 		mTitle = getTitle();
 
+		
+		
 		// Set up the drawer.
 		mNavigationDrawerFragment.setUp(R.id.navigation_drawer, (DrawerLayout) findViewById(R.id.drawer_layout));
 
@@ -46,6 +48,7 @@ public class HomeActivity extends ActionBarActivity implements NavigationDrawerF
 		actionBar.setDisplayHomeAsUpEnabled(false);
 		actionBar.setDisplayShowCustomEnabled(true);
 		actionBar.setDisplayShowTitleEnabled(false);
+		actionBar.setTitle("");
 		actionBar.setIcon(null);
 		mNavigationDrawerFragment.setUp(R.id.navigation_drawer, (DrawerLayout) findViewById(R.id.drawer_layout));
 
@@ -84,7 +87,7 @@ public class HomeActivity extends ActionBarActivity implements NavigationDrawerF
 		ActionBar actionBar = getSupportActionBar();
 		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
 		actionBar.setDisplayShowTitleEnabled(true);
-		actionBar.setTitle(mTitle);
+		
 	}
 
 	@Override
@@ -111,6 +114,8 @@ public class HomeActivity extends ActionBarActivity implements NavigationDrawerF
 		}
 		return super.onOptionsItemSelected(item);
 	}
+	
+	
 
 	/**
 	 * A placeholder fragment containing a simple view.

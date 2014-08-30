@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!--
         Base application theme, dependent on API level. This theme is replaced
@@ -21,12 +21,15 @@
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
         <item name="circularProgressBarStyle">@style/CircularProgressBar</item>
+        <item name="android:icon">@android:color/transparent</item>
+        
     </style>
     
     <style name="AppThemeLight" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
         <item name="circularProgressBarStyle">@style/CircularProgressBarLight</item>
         <item name="android:icon">@android:color/transparent</item>
+        <item name="android:background">@android:color/black</item>
     </style>
 
 </resources>

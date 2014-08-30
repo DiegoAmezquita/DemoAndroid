@@ -1,30 +1,26 @@
 package com.appsolution.bancoldex;
 
-import de.passsy.holocircularprogressbar.HoloCircularProgressBar;
-import android.support.v7.app.ActionBarActivity;
 import android.app.Activity;
-import android.support.v7.app.ActionBar;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.ActionBarDrawerToggle;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.graphics.Color;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.v4.app.ActionBarDrawerToggle;
+import android.support.v4.app.Fragment;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.ActionBarActivity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ListView;
-import android.widget.Toast;
+import de.passsy.holocircularprogressbar.HoloCircularProgressBar;
 
 /**
  * Fragment used for managing interactions for and presentation of a navigation
@@ -63,6 +59,9 @@ public class NavigationDrawerFragment extends Fragment {
 	private boolean mFromSavedInstanceState;
 	private boolean mUserLearnedDrawer;
 
+	HoloCircularProgressBar mHoloCircularProgressBar;
+	HoloCircularProgressBar mHoloCircularProgressBar2;
+
 	public NavigationDrawerFragment() {
 	}
 
@@ -75,7 +74,7 @@ public class NavigationDrawerFragment extends Fragment {
 		// drawer. See PREF_USER_LEARNED_DRAWER for details.
 		SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getActivity());
 		mUserLearnedDrawer = sp.getBoolean(PREF_USER_LEARNED_DRAWER, false);
-		
+
 		if (savedInstanceState != null) {
 			mCurrentSelectedPosition = savedInstanceState.getInt(STATE_SELECTED_POSITION);
 			mFromSavedInstanceState = true;
@@ -97,47 +96,46 @@ public class NavigationDrawerFragment extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		LinearLayout mainLayout = (LinearLayout) inflater.inflate(R.layout.fragment_navigation_drawer, container, false);
 
-		// mDrawerListView = (ListView)
-		// inflater.inflate(R.layout.fragment_navigation_drawer, container,
-		// false);
-		// mDrawerListView.setOnItemClickListener(new
-		// AdapterView.OnItemClickListener() {
-		// @Override
-		// public void onItemClick(AdapterView<?> parent, View view, int
-		// position, long id) {
-		// selectItem(position);
-		// }
-		// });
-		// mDrawerListView.setAdapter(new
-		// ArrayAdapter<String>(getActionBar().getThemedContext(),
-		// android.R.layout.simple_list_item_1, android.R.id.text1, new String[]
-		// {
-		// getString(R.string.title_section1),
-		// getString(R.string.title_section2),
-		// getString(R.string.title_section3), }));
-		// mDrawerListView.setItemChecked(mCurrentSelectedPosition, true);
-		// return mDrawerListView;
-
-		HoloCircularProgressBar mHoloCircularProgressBar = (HoloCircularProgressBar) mainLayout.findViewById(R.id.holoCircularProgressBar1);
+		mHoloCircularProgressBar = (HoloCircularProgressBar) mainLayout.findViewById(R.id.holoCircularProgressBar1);
 
 		mHoloCircularProgressBar.setMarkerEnabled(false);
-		mHoloCircularProgressBar.setProgress(0.375f);
+		mHoloCircularProgressBar.setProgress(0.0f);
 		mHoloCircularProgressBar.setRotation(225f);
 		mHoloCircularProgressBar.setThumbEnabled(false);
-		mHoloCircularProgressBar.setProgressColor(Color.argb(255, 216,152,17));
+		mHoloCircularProgressBar.setProgressColor(Color.argb(255, 216, 152, 17));
 		mHoloCircularProgressBar.setProgressBackgroundColor(Color.TRANSPARENT);
-		
 
-		HoloCircularProgressBar mHoloCircularProgressBar2 = (HoloCircularProgressBar) mainLayout.findViewById(R.id.holoCircularProgressBar2);
+		mHoloCircularProgressBar2 = (HoloCircularProgressBar) mainLayout.findViewById(R.id.holoCircularProgressBar2);
 
 		mHoloCircularProgressBar2.setMarkerEnabled(false);
-		mHoloCircularProgressBar2.setProgress(0.75f);
+		mHoloCircularProgressBar2.setProgress(0.0f);
 		mHoloCircularProgressBar2.setRotation(90f);
 		mHoloCircularProgressBar2.setThumbEnabled(false);
-		mHoloCircularProgressBar2.setProgressColor(Color.argb(255, 145,183,17));
+		mHoloCircularProgressBar2.setProgressColor(Color.argb(255, 145, 183, 17));
 		mHoloCircularProgressBar2.setProgressBackgroundColor(Color.TRANSPARENT);
 
 		return mainLayout;
+
+	}
+
+	public void animateCircle() {
+		mHoloCircularProgressBar.setProgress(0.0f);
+
+		mHoloCircularProgressBar2.setProgress(0.0f);
+		new AnimationCircle().execute("", "", "");
+	}
+
+	public void updateProgress() {
+		getActivity().runOnUiThread(new Runnable() {
+			@Override
+			public void run() {
+				mHoloCircularProgressBar2.setProgress(mHoloCircularProgressBar2.getProgress() + 0.01f);
+				if (mHoloCircularProgressBar.getProgress() < 0.375f) {
+					mHoloCircularProgressBar.setProgress(mHoloCircularProgressBar.getProgress() + 0.01f);
+				}
+
+			}
+		});
 
 	}
 
@@ -184,16 +182,20 @@ public class NavigationDrawerFragment extends Fragment {
 			@Override
 			public void onDrawerClosed(View drawerView) {
 				super.onDrawerClosed(drawerView);
+				mHoloCircularProgressBar.setProgress(0.0f);
+
+				mHoloCircularProgressBar2.setProgress(0.0f);
 				if (!isAdded()) {
 					return;
 				}
 
 				getActivity().supportInvalidateOptionsMenu(); // calls
-																// onPrepareOptionsMenu()
+
 			}
 
 			@Override
 			public void onDrawerOpened(View drawerView) {
+				animateCircle();
 				super.onDrawerOpened(drawerView);
 				if (!isAdded()) {
 					return;
@@ -302,9 +304,10 @@ public class NavigationDrawerFragment extends Fragment {
 	 */
 	private void showGlobalContextActionBar() {
 		ActionBar actionBar = getActionBar();
-		actionBar.setDisplayShowTitleEnabled(true);
+		actionBar.setTitle("");
+		actionBar.setDisplayShowTitleEnabled(false);
 		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
-		actionBar.setTitle(R.string.app_name);
+
 	}
 
 	private ActionBar getActionBar() {
@@ -321,4 +324,23 @@ public class NavigationDrawerFragment extends Fragment {
 		 */
 		void onNavigationDrawerItemSelected(int position);
 	}
+
+	public class AnimationCircle extends AsyncTask<Object, Object, Object> {
+
+		@Override
+		protected Object doInBackground(Object... params) {
+			while (mHoloCircularProgressBar2.getProgress() < 0.75f) {
+				try {
+					Thread.sleep(10);
+					updateProgress();
+				} catch (Exception e) {
+					// TODO: handle exception
+				}
+
+			}
+			return null;
+		}
+
+	}
+
 }
