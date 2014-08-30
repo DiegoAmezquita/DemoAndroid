@@ -10,12 +10,187 @@
          As the main content view, the view below consumes the entire
          space available using match_parent in both dimensions.
     -->
-
-    <FrameLayout
-        android:id="@+id/container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
+    <LinearLayout android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+	    <RelativeLayout
+		    android:layout_weight="2"
+		    android:background="#ffff00"
+		    android:layout_width="fill_parent"
+		    android:layout_height="0dp">
+		    <TextView
+		        android:id="@+id/textView2"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:gravity="center_horizontal"
+		        android:text="Hello 3"
+		        android:textColor="#000000"
+		        android:textSize="15dp" />
+		</RelativeLayout>
+		<RelativeLayout
+	    android:layout_weight="1"
+	    android:layout_width="fill_parent"
+	    android:layout_height="0dp">
+		    <TableLayout android:layout_width="fill_parent"
+		        android:layout_height="fill_parent"
+		        android:background="#0D00FF"
+		        android:id="@+id/tableMenuDown" >
+		        <TableRow android:layout_width="fill_parent"
+		            android:layout_height="fill_parent"
+		             android:layout_weight="1"
+		            android:layout_gravity="center"
+		            android:padding="0dp"
+		            >
+		           <LinearLayout
+		               android:padding="0dp"
+		               android:layout_weight="1"
+			        android:layout_width="fill_parent"
+			        android:layout_height="fill_parent"
+			        android:layout_gravity="center"
+			        android:background="@drawable/big_button_selected"
+			        android:gravity="center"
+			        android:orientation="horizontal"
+			        >
+				
+				        <ImageView
+				            android:id="@+id/xIcon"
+				            android:layout_width="wrap_content"
+				            android:layout_height="wrap_content"
+				            android:src="@drawable/ic_drawer" />
+				
+				        <TextView
+				            android:id="@+id/xSettingsTxt"
+				            android:layout_width="wrap_content"
+				            android:layout_height="wrap_content"
+				            android:text="Necesito un crédito"
+				            android:textColor="#000000" />
+				    </LinearLayout> 
+		           
+		        </TableRow>
+		        <TableRow android:layout_width="fill_parent"
+		            android:layout_height="0dp"
+		            android:background="#888888"
+		            android:layout_weight="2"
+		            >
+		            <LinearLayout
+		            android:layout_weight="1"
+			        android:layout_width="0dp"
+			        android:layout_height="fill_parent"
+			        android:layout_gravity="center"
+			        android:background="@drawable/menu_normal_button"
+			        android:gravity="center"
+			        android:orientation="vertical"
+			       >
+				
+				        <ImageView
+				            android:id="@+id/xIcon"
+				            android:layout_width="wrap_content"
+				            android:layout_height="wrap_content"
+				            android:layout_alignParentTop="true"
+				            android:layout_centerHorizontal="true"
+				            android:src="@drawable/ic_drawer" />
+				
+				        <TextView
+				            android:id="@+id/xSettingsTxt"
+				            android:layout_width="wrap_content"
+				            android:layout_height="wrap_content"
+				            android:layout_alignParentBottom="true"
+				            android:layout_centerHorizontal="true"
+				            android:text="Que oportunidades hay?"
+				            android:textColor="#000000" />
+				    </LinearLayout> 
+				    
+		            <LinearLayout
+		            android:layout_weight="1"
+			        android:layout_width="0dp"
+			        android:layout_height="fill_parent"
+			        android:layout_gravity="center"
+			        android:background="@drawable/menu_normal_button"
+			        android:gravity="center"
+			        android:orientation="vertical"
+			       >
+				
+				        <ImageView
+				            android:id="@+id/xIcon"
+				            android:layout_width="wrap_content"
+				            android:layout_height="wrap_content"
+				            android:layout_alignParentTop="true"
+				            android:layout_centerHorizontal="true"
+				            android:src="@drawable/ic_drawer" />
+				
+				        <TextView
+				            android:id="@+id/xSettingsTxt"
+				            android:layout_width="wrap_content"
+				            android:layout_height="wrap_content"
+				            android:layout_alignParentBottom="true"
+				            android:layout_centerHorizontal="true"
+				            android:text="Con quién hablo?"
+				            android:textColor="#000000" />
+				    </LinearLayout>
+		        </TableRow>
+		        <TableRow android:layout_width="fill_parent"
+		            android:layout_height="0dp"
+		            android:background="#AAff55"
+		            android:layout_weight="2"
+		            >
+		             <LinearLayout
+		            android:layout_weight="1"
+			        android:layout_width="0dp"
+			        android:layout_height="fill_parent"
+			        android:layout_gravity="center"
+			        android:background="@drawable/menu_normal_button"
+			        android:gravity="center"
+			        android:orientation="vertical"
+			       >
+				
+				        <ImageView
+				            android:id="@+id/xIcon"
+				            android:layout_width="wrap_content"
+				            android:layout_height="wrap_content"
+				            android:layout_alignParentTop="true"
+				            android:layout_centerHorizontal="true"
+				            android:src="@drawable/ic_drawer" />
+				
+				        <TextView
+				            android:id="@+id/xSettingsTxt"
+				            android:layout_width="wrap_content"
+				            android:layout_height="wrap_content"
+				            android:layout_alignParentBottom="true"
+				            android:layout_centerHorizontal="true"
+				            android:text="Que oportunidades hay?"
+				            android:textColor="#000000" />
+				    </LinearLayout> 
+		            <LinearLayout
+		            android:layout_weight="1"
+			        android:layout_width="0dp"
+			        android:layout_height="fill_parent"
+			        android:layout_gravity="center"
+			        android:background="@drawable/menu_normal_button"
+			        android:gravity="center"
+			        android:orientation="vertical"
+			       >
+				
+				        <ImageView
+				            android:id="@+id/xIcon"
+				            android:layout_width="wrap_content"
+				            android:layout_height="wrap_content"
+				            android:layout_alignParentTop="true"
+				            android:layout_centerHorizontal="true"
+				            android:src="@drawable/ic_drawer" />
+				
+				        <TextView
+				            android:id="@+id/xSettingsTxt"
+				            android:layout_width="wrap_content"
+				            android:layout_height="wrap_content"
+				            android:layout_alignParentBottom="true"
+				            android:layout_centerHorizontal="true"
+				            android:text="Que oportunidades hay?"
+				            android:textColor="#000000" />
+				    </LinearLayout> 
+		        </TableRow>
+		    </TableLayout>
+		</RelativeLayout>
+	</LinearLayout>
     <!--
          android:layout_gravity="start" tells DrawerLayout to treat
          this as a sliding drawer on the left side for left-to-right
