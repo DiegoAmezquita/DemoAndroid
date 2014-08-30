@@ -52,9 +52,7 @@ public class HomeActivity extends ActionBarActivity implements NavigationDrawerF
 		actionBar.setIcon(null);
 		mNavigationDrawerFragment.setUp(R.id.navigation_drawer, (DrawerLayout) findViewById(R.id.drawer_layout));
 
-		BitmapDrawable background = new BitmapDrawable(BitmapFactory.decodeResource(getResources(), R.drawable.header));
-		background.setTileModeX(android.graphics.Shader.TileMode.REPEAT);
-		actionBar.setBackgroundDrawable(background);
+		
 		LayoutInflater inflator = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		View v = inflator.inflate(R.layout.topbarview, null);
 

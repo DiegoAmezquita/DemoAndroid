@@ -18,12 +18,20 @@
          <item name="circularProgressBarStyle">@style/CircularProgressBar</item>
     </style>
     
+    
+    <style name="MyActionBarTest" parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
+        <item name="android:background">@drawable/header</item>
+        
+    </style>
+    
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
         <item name="circularProgressBarStyle">@style/CircularProgressBar</item>
         <item name="android:icon">@android:color/transparent</item>
-        
+        <item name="android:actionBarStyle">@style/MyActionBarTest</item>
     </style>
+    
+      
     
     <style name="AppThemeLight" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
