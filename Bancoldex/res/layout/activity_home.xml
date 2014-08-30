@@ -24,6 +24,8 @@
 		        android:background="@drawable/image_background"
 		        ></FrameLayout>
 		</RelativeLayout>
+		
+	    <!-- Panel bottom menu -->
 		<RelativeLayout
 	    android:layout_weight="2"
 	    android:layout_width="fill_parent"
@@ -53,10 +55,10 @@
 			        >
 				
 				        <ImageView
-				            android:padding="8dp"
 				            android:id="@+id/xIcon"
 				            android:layout_width="wrap_content"
 				            android:layout_height="wrap_content"
+				            android:paddingRight="5dp"
 				            android:src="@drawable/unamonedamono" />
 				
 				        <TextView
@@ -64,7 +66,7 @@
 				            android:layout_width="wrap_content"
 				            android:layout_height="wrap_content"
 				            android:text="Necesito un crédito"
-				            android:textColor="#000000" />
+				             />
 				    </LinearLayout> 
 		           
 		        </TableRow>
@@ -72,6 +74,8 @@
 		            android:layout_height="0dp"
 		            android:layout_weight="2"
 		            android:padding="0dp"
+		            android:id="@+id/firstConfig_1"
+		            android:visibility="gone"
 		        android:layout_margin="0dp"
 		            >
 		            <LinearLayout
@@ -99,7 +103,7 @@
 				            android:layout_alignParentBottom="true"
 				            android:layout_centerHorizontal="true"
 				            android:text="Que oportunidades hay?"
-				            android:textColor="#000000" />
+				            android:textColor="#9E9E9E" />
 				    </LinearLayout> 
 				    
 		            <LinearLayout
@@ -127,13 +131,15 @@
 				            android:layout_alignParentBottom="true"
 				            android:layout_centerHorizontal="true"
 				            android:text="Con quién hablo?"
-				            android:textColor="#000000" />
+				            android:textColor="#9E9E9E" />
 				    </LinearLayout>
 		        </TableRow>
 		        <TableRow android:layout_width="fill_parent"
 		            android:layout_height="0dp"
 		            android:layout_weight="2"
 		            android:padding="0dp"
+		            android:id="@+id/firstConfig_2"
+		            android:visibility="gone"
 		        android:layout_margin="0dp"
 		            >
 		             <LinearLayout
@@ -161,7 +167,7 @@
 				            android:layout_alignParentBottom="true"
 				            android:layout_centerHorizontal="true"
 				            android:text="Que oportunidades hay?"
-				            android:textColor="#000000" />
+				            android:textColor="#9E9E9E" />
 				    </LinearLayout> 
 		            <LinearLayout
 		            android:layout_weight="1"
@@ -188,24 +194,108 @@
 				            android:layout_alignParentBottom="true"
 				            android:layout_centerHorizontal="true"
 				            android:text="Que oportunidades hay?"
-				            android:textColor="#000000" />
+				            android:textColor="#9E9E9E" />
 				    </LinearLayout> 
 		        </TableRow>
+		         
+				<!-- La fila con 3 botones -->
+				<TableRow android:layout_width="fill_parent"
+		            android:layout_height="0dp"
+		            android:layout_weight="4"
+		            android:padding="0dp"
+		            android:id="@+id/secondConfig_1"
+		        android:layout_margin="0dp"
+		            >
+		             <LinearLayout
+		            android:layout_weight="1"
+			        android:layout_width="0dp"
+			        android:layout_height="fill_parent"
+			        android:layout_gravity="center"
+			        android:background="@drawable/menu_normal_button"
+			        android:gravity="center"
+			        android:orientation="vertical"
+			       >
+				
+				        <ImageView
+				            android:id="@+id/xIcon"
+				            android:layout_width="wrap_content"
+				            android:layout_height="wrap_content"
+				            android:layout_alignParentTop="true"
+				            android:layout_centerHorizontal="true"
+				            android:src="@drawable/oportunidades" />
+				
+				        <TextView
+				            android:id="@+id/xSettingsTxt"
+				            android:layout_width="wrap_content"
+				            android:layout_height="wrap_content"
+				            android:gravity="center"
+				            android:layout_alignParentBottom="true"
+				            android:layout_centerHorizontal="true"
+				            android:text="Qué oportunidades hay?"
+				            android:textColor="#9E9E9E" />
+				    </LinearLayout> 
+		            <LinearLayout
+		            android:layout_weight="1"
+			        android:layout_width="0dp"
+			        android:layout_height="fill_parent"
+			        android:layout_gravity="center"
+			        android:background="@drawable/menu_normal_button"
+			        android:gravity="center"
+			        android:orientation="vertical"
+			       >
+				
+				        <ImageView
+				            android:id="@+id/xIcon"
+				            android:layout_width="wrap_content"
+				            android:layout_height="wrap_content"
+				            android:layout_alignParentTop="true"
+				            android:layout_centerHorizontal="true"
+				            android:paddingBottom="10dp"
+				            android:src="@drawable/conquienhablo" />
+				
+				        <TextView
+				            android:id="@+id/xSettingsTxt"
+				            android:layout_width="wrap_content"
+				            android:layout_height="wrap_content"
+				            android:layout_alignParentBottom="true"
+				            android:layout_centerHorizontal="true"
+				            android:gravity="center"
+				            android:text="Con quien hablo?"
+				            android:textColor="#9E9E9E" />
+				    </LinearLayout>
+				    <LinearLayout
+		            android:layout_weight="1"
+			        android:layout_width="0dp"
+			        android:layout_height="fill_parent"
+			        android:layout_gravity="center"
+			        android:background="@drawable/menu_normal_button"
+			        android:gravity="center"
+			        android:orientation="vertical"
+			       >
+				
+				        <ImageView
+				            android:id="@+id/xIcon"
+				            android:layout_width="wrap_content"
+				            android:layout_height="wrap_content"
+				            android:layout_alignParentTop="true"
+				            android:layout_centerHorizontal="true"
+				            android:src="@drawable/dolar" />
+				
+				        <TextView
+				            android:id="@+id/xSettingsTxt"
+				            android:layout_width="wrap_content"
+				            android:layout_height="wrap_content"
+				            android:layout_alignParentBottom="true"
+				            android:layout_centerHorizontal="true"
+				            android:text="Inteligencia Financiera"
+				            android:gravity="center"
+				            android:textColor="#9E9E9E" />
+				    </LinearLayout>
+		        </TableRow>		        
 		    </TableLayout>
 		</RelativeLayout>
+		<!-- End Panel bottom menu -->
 	</LinearLayout>
-    <!--
-         android:layout_gravity="start" tells DrawerLayout to treat
-         this as a sliding drawer on the left side for left-to-right
-         languages and on the right side for right-to-left languages.
-         If you're not building against API 17 or higher, use
-         android:layout_gravity="left" instead.
-    -->
-    <!--
-         The drawer is given a fixed width in dp and extends the full height of
-         the container.
-    -->
-
     <fragment
         android:id="@+id/navigation_drawer"
         android:name="com.appsolution.bancoldex.NavigationDrawerFragment"

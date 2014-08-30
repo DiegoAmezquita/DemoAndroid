@@ -2,8 +2,6 @@ package com.appsolution.bancoldex;
 
 import android.app.Activity;
 import android.content.Context;
-import android.graphics.BitmapFactory;
-import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -15,6 +13,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TableRow;
 
 public class HomeActivity extends ActionBarActivity implements NavigationDrawerFragment.NavigationDrawerCallbacks {
 
@@ -29,12 +28,21 @@ public class HomeActivity extends ActionBarActivity implements NavigationDrawerF
 	 * {@link #restoreActionBar()}.
 	 */
 	private CharSequence mTitle;
+	
+	private TableRow rowFirstConfig_1;
+	private TableRow rowFirstConfig_2;
+	private TableRow rowSecondtConfig_1;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_home);
-
+		
+		rowFirstConfig_1=(TableRow)findViewById(R.id.firstConfig_1);
+		rowFirstConfig_2=(TableRow)findViewById(R.id.firstConfig_2);
+		
+		rowSecondtConfig_1=(TableRow)findViewById(R.id.secondConfig_1);
+		
 		mNavigationDrawerFragment = (NavigationDrawerFragment) getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
 		mTitle = getTitle();
 
@@ -57,7 +65,21 @@ public class HomeActivity extends ActionBarActivity implements NavigationDrawerF
 		View v = inflator.inflate(R.layout.topbarview, null);
 
 		actionBar.setCustomView(v);
-
+		//showBottomMenuFiveButtons();
+		showBottomMenuFourButtons();
+	}
+	
+	
+	public void showBottomMenuFourButtons(){
+		rowFirstConfig_1.setVisibility(View.VISIBLE);
+		rowFirstConfig_2.setVisibility(View.VISIBLE);
+		rowSecondtConfig_1.setVisibility(View.GONE);
+	}
+	
+	public void showBottomMenuFiveButtons(){
+		rowFirstConfig_1.setVisibility(View.GONE);
+		rowFirstConfig_2.setVisibility(View.GONE);
+		rowSecondtConfig_1.setVisibility(View.VISIBLE);
 	}
 
 	@Override
