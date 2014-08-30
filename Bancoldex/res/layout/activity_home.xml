@@ -14,35 +14,35 @@
     android:layout_height="fill_parent"
     android:orientation="vertical">
 	    <RelativeLayout
-		    android:layout_weight="2"
-		    android:background="#ffff00"
+		    android:layout_weight="3"
 		    android:layout_width="fill_parent"
 		    android:layout_height="0dp">
-		    <TextView
-		        android:id="@+id/textView2"
+		    <FrameLayout
+		        android:id="@+id/container" 
 		        android:layout_width="fill_parent"
-		        android:layout_height="wrap_content"
-		        android:gravity="center_horizontal"
-		        android:text="Hello 3"
-		        android:textColor="#000000"
-		        android:textSize="15dp" />
+		        android:layout_height="fill_parent"
+		        android:background="@drawable/image_background"
+		        ></FrameLayout>
 		</RelativeLayout>
 		<RelativeLayout
-	    android:layout_weight="1"
+	    android:layout_weight="2"
 	    android:layout_width="fill_parent"
 	    android:layout_height="0dp">
 		    <TableLayout android:layout_width="fill_parent"
 		        android:layout_height="fill_parent"
-		        android:background="#0D00FF"
+		        android:padding="0dp"
+		        android:layout_margin="0dp"
 		        android:id="@+id/tableMenuDown" >
 		        <TableRow android:layout_width="fill_parent"
-		            android:layout_height="fill_parent"
-		             android:layout_weight="1"
+		            android:layout_height="0dp"
+		             android:layout_weight="0.6"
 		            android:layout_gravity="center"
+		            
 		            android:padding="0dp"
+		        android:layout_margin="0dp"
 		            >
 		           <LinearLayout
-		               android:padding="0dp"
+		               
 		               android:layout_weight="1"
 			        android:layout_width="fill_parent"
 			        android:layout_height="fill_parent"
@@ -53,10 +53,11 @@
 			        >
 				
 				        <ImageView
+				            android:padding="8dp"
 				            android:id="@+id/xIcon"
 				            android:layout_width="wrap_content"
 				            android:layout_height="wrap_content"
-				            android:src="@drawable/ic_drawer" />
+				            android:src="@drawable/unamonedamono" />
 				
 				        <TextView
 				            android:id="@+id/xSettingsTxt"
@@ -69,8 +70,9 @@
 		        </TableRow>
 		        <TableRow android:layout_width="fill_parent"
 		            android:layout_height="0dp"
-		            android:background="#888888"
 		            android:layout_weight="2"
+		            android:padding="0dp"
+		        android:layout_margin="0dp"
 		            >
 		            <LinearLayout
 		            android:layout_weight="1"
@@ -88,7 +90,7 @@
 				            android:layout_height="wrap_content"
 				            android:layout_alignParentTop="true"
 				            android:layout_centerHorizontal="true"
-				            android:src="@drawable/ic_drawer" />
+				            android:src="@drawable/oportunidades" />
 				
 				        <TextView
 				            android:id="@+id/xSettingsTxt"
@@ -116,7 +118,7 @@
 				            android:layout_height="wrap_content"
 				            android:layout_alignParentTop="true"
 				            android:layout_centerHorizontal="true"
-				            android:src="@drawable/ic_drawer" />
+				            android:src="@drawable/conquienhablo" />
 				
 				        <TextView
 				            android:id="@+id/xSettingsTxt"
@@ -130,8 +132,9 @@
 		        </TableRow>
 		        <TableRow android:layout_width="fill_parent"
 		            android:layout_height="0dp"
-		            android:background="#AAff55"
 		            android:layout_weight="2"
+		            android:padding="0dp"
+		        android:layout_margin="0dp"
 		            >
 		             <LinearLayout
 		            android:layout_weight="1"
@@ -149,7 +152,7 @@
 				            android:layout_height="wrap_content"
 				            android:layout_alignParentTop="true"
 				            android:layout_centerHorizontal="true"
-				            android:src="@drawable/ic_drawer" />
+				            android:src="@drawable/nosotros" />
 				
 				        <TextView
 				            android:id="@+id/xSettingsTxt"
@@ -176,7 +179,7 @@
 				            android:layout_height="wrap_content"
 				            android:layout_alignParentTop="true"
 				            android:layout_centerHorizontal="true"
-				            android:src="@drawable/ic_drawer" />
+				            android:src="@drawable/dolar" />
 				
 				        <TextView
 				            android:id="@+id/xSettingsTxt"
