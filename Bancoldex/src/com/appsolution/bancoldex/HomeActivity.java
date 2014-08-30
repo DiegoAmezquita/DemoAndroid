@@ -65,8 +65,8 @@ public class HomeActivity extends ActionBarActivity implements NavigationDrawerF
 		View v = inflator.inflate(R.layout.topbarview, null);
 
 		actionBar.setCustomView(v);
-		//showBottomMenuFiveButtons();
-		showBottomMenuFourButtons();
+		showBottomMenuFiveButtons();
+		//showBottomMenuFourButtons();
 	}
 	
 	
