@@ -26,6 +26,7 @@
     <style name="AppThemeLight" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
         <item name="circularProgressBarStyle">@style/CircularProgressBarLight</item>
+        <item name="android:icon">@android:color/transparent</item>
     </style>
 
 </resources>

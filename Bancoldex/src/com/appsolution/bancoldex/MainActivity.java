@@ -1,5 +1,6 @@
 package com.appsolution.bancoldex;
 
+import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -29,6 +30,25 @@ public class MainActivity extends ActionBarActivity {
 
 			}
 		});
+		
+		mSplashThread = new Thread(new Runnable() {
+			@Override
+			public void run() {
+				try {
+					Thread.sleep(3000);
+					Intent homeIntent = new Intent(getApplicationContext(), HomeActivity.class);
+					startActivity(homeIntent);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			
+		});
+		
+		mSplashThread.start();
+		
+		
 
 	}
 

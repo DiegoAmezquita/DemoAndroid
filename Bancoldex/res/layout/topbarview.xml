@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+     >
+
+    <ImageView
+        android:id="@+id/headerBrand"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:paddingLeft="50dp"
+         android:paddingRight="50dp"
+         android:paddingTop="5dp"
+         android:paddingBottom="5dp"
+        android:layout_centerVertical="true"
+        android:contentDescription="@string/abc_action_bar_home_description"
+        android:src="@drawable/header_brand" />
+
+</RelativeLayout >
