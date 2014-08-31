@@ -1,7 +1,7 @@
 package com.appsolution.bancoldex;
 
 import android.app.ActionBar;
-import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -9,7 +9,7 @@ import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarActivity;
+import android.text.InputType;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -18,6 +18,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
@@ -47,7 +48,7 @@ public class NavigationDrawerFragmentLogin extends Fragment {
 
 	String userIntermediario = "intermediario";
 	String passwordIntermediario = "123";
-	
+
 	String userEjecutivoCuenta = "ecuenta";
 	String passwordEjecutivoCuenta = "123";
 
@@ -112,15 +113,18 @@ public class NavigationDrawerFragmentLogin extends Fragment {
 				Toast.makeText(getActivity(), "Intermediario", Toast.LENGTH_SHORT).show();
 				Intent intent = new Intent(getActivity(), LoggedIntermediarioActivity.class);
 				startActivity(intent);
-			}else if (textUserEditText.equals(userEjecutivoCuenta) && textPasswordEditText.equals(passwordEjecutivoCuenta)) {
+			} else if (textUserEditText.equals(userEjecutivoCuenta) && textPasswordEditText.equals(passwordEjecutivoCuenta)) {
 				Toast.makeText(getActivity(), "Ejecutivo Cuenta", Toast.LENGTH_SHORT).show();
 				Intent intent = new Intent(getActivity(), LoggedEjecutivoCuentaActivity.class);
 				startActivity(intent);
 			}
 		}
+		
+		
+		InputMethodManager inputMethodManager = (InputMethodManager) getActivity().getSystemService(getActivity().INPUT_METHOD_SERVICE);
+        inputMethodManager.hideSoftInputFromWindow(getActivity().getCurrentFocus().getWindowToken(), 0);
+    
 
-		InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Activity.INPUT_METHOD_SERVICE);
-		imm.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
 	}
 
 	public boolean isDrawerOpen() {
@@ -145,11 +149,10 @@ public class NavigationDrawerFragmentLogin extends Fragment {
 		mDrawerLayout.setDrawerShadow(R.drawable.drawer_shadow, GravityCompat.START);
 		// set up the drawer's list view with items and click listener
 
-
 		ActionBar actionBar = getActionBar();
 		actionBar.setDisplayHomeAsUpEnabled(true);
 		actionBar.setHomeButtonEnabled(true);
-		
+
 		// ActionBarDrawerToggle ties together the the proper interactions
 		// between the navigation drawer and the action bar app icon.
 		mDrawerToggle = new ActionBarDrawerToggle(getActivity(), /* host Activity */
@@ -201,7 +204,7 @@ public class NavigationDrawerFragmentLogin extends Fragment {
 
 		mDrawerLayout.setDrawerListener(mDrawerToggle);
 	}
-	
+
 	private ActionBar getActionBar() {
 		return getActivity().getActionBar();
 	}
@@ -243,8 +246,6 @@ public class NavigationDrawerFragmentLogin extends Fragment {
 
 		return super.onOptionsItemSelected(item);
 	}
-
-	
 
 	/**
 	 * Callbacks interface that all activities using this fragment must

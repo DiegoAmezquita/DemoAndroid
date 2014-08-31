@@ -148,6 +148,7 @@ public class HomeActivity extends FragmentActivity implements NavigationDrawerFr
 			@Override
 			public void onClick(View arg0) {
 				contentMap.setVisibility(FrameLayout.VISIBLE);
+				setUpMapIfNeeded();
 				contentTwo.setVisibility(TableLayout.GONE);
 			}
 		});
@@ -240,7 +241,7 @@ public class HomeActivity extends FragmentActivity implements NavigationDrawerFr
 	}
 
 	public void loadNecesitoUnCredito() {
-		contentMap.setVisibility(FrameLayout.GONE);
+//		contentMap.setVisibility(FrameLayout.GONE);
 		contentTwo.setVisibility(TableLayout.VISIBLE);
 		final int mShortAnimationDuration = getResources().getInteger(android.R.integer.config_longAnimTime);
 
@@ -252,7 +253,7 @@ public class HomeActivity extends FragmentActivity implements NavigationDrawerFr
 	}
 
 	public void loadQueOportunidadesHay() {
-		contentMap.setVisibility(FrameLayout.GONE);
+//		contentMap.setVisibility(FrameLayout.GONE);
 		contentTwo.setVisibility(TableLayout.VISIBLE);
 		final int mShortAnimationDuration = getResources().getInteger(android.R.integer.config_longAnimTime);
 
@@ -260,11 +261,13 @@ public class HomeActivity extends FragmentActivity implements NavigationDrawerFr
 		layoutQueOportunidadesHay.animate().translationX(0).setDuration(mShortAnimationDuration);
 		contentOne.animate().translationX(800).setDuration(mShortAnimationDuration);
 		contentTwo.animate().translationX(0).setDuration(mShortAnimationDuration);
+		
+		contentMap.animate().translationX(0).setDuration(mShortAnimationDuration);
 
 	}
 
 	public void loadConQuienHablo() {
-		contentMap.setVisibility(FrameLayout.GONE);
+//		contentMap.setVisibility(FrameLayout.GONE);
 		contentTwo.setVisibility(TableLayout.VISIBLE);
 		final int mShortAnimationDuration = getResources().getInteger(android.R.integer.config_longAnimTime);
 
@@ -276,7 +279,7 @@ public class HomeActivity extends FragmentActivity implements NavigationDrawerFr
 	}
 
 	public void loadComoMePuedeAyudarBancoldex() {
-		contentMap.setVisibility(FrameLayout.GONE);
+//		contentMap.setVisibility(FrameLayout.GONE);
 		contentTwo.setVisibility(TableLayout.VISIBLE);
 		final int mShortAnimationDuration = getResources().getInteger(android.R.integer.config_longAnimTime);
 
@@ -288,7 +291,7 @@ public class HomeActivity extends FragmentActivity implements NavigationDrawerFr
 	}
 
 	public void loadInteligenciaFinanciera() {
-		contentMap.setVisibility(FrameLayout.GONE);
+//		contentMap.setVisibility(FrameLayout.GONE);
 		contentTwo.setVisibility(TableLayout.VISIBLE);
 		final int mShortAnimationDuration = getResources().getInteger(android.R.integer.config_longAnimTime);
 
