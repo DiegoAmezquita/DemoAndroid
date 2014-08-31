@@ -36,7 +36,7 @@ public class MainActivity extends ActionBarActivity {
 			public void run() {
 				try {
 					Thread.sleep(3000);
-					Intent homeIntent = new Intent(getApplicationContext(), HomeActivity.class);
+					Intent homeIntent = new Intent(getApplicationContext(), LoggedIntermediarioActivity.class);
 					startActivity(homeIntent);
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block

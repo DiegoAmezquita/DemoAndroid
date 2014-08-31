@@ -77,6 +77,7 @@
 	                    android:layout_height="40dp"
 	                   	android:text=""
 	                   	android:background="@drawable/lbl_comoestuempresa"
+	                   	android:paddingTop="20dp"
 	                    />
                        <LinearLayout android:layout_width="400dp"
 	                    android:layout_height="wrap_content"
@@ -84,12 +85,12 @@
                            <Button
                                 android:id="@+id/buttonEmpExportadora"
                                android:layout_width="200dp"
-	                    android:layout_height="55dp"
+	                    android:layout_height="60dp"
 	                    android:background="@drawable/btn_empresaexportadora"/>
                            <Button
                                android:id="@+id/buttonEmpNacional"
                                android:layout_width="200dp"
-	                    android:layout_height="55dp"
+	                    android:layout_height="60dp"
 	                    android:background="@drawable/btn_mercadonacional"/>
                        </LinearLayout>
                        <LinearLayout android:layout_width="fill_parent"
@@ -100,6 +101,7 @@
                           <LinearLayout android:layout_width="500dp"
 	                    android:layout_height="wrap_content"
 	                    android:orientation="horizontal"
+	                    android:paddingTop="20dp"
 	                    android:background="@drawable/slide_menu_background_bar">
                           
                        </LinearLayout>
@@ -215,6 +217,7 @@
                           <TableLayout android:layout_width="fill_parent"
 	                    android:layout_height="wrap_content">
                               <TableRow android:layout_width="fill_parent"
+                                  android:layout_weight="1"
 	                    android:layout_height="wrap_content">
                                   <Button android:layout_width="0dp"
                                       android:layout_height="35dp"
@@ -232,6 +235,7 @@
                                       android:text="\tFinanciar y mitigar el riesgo de sus ventas"/>
                               </TableRow>
                               <TableRow android:layout_width="fill_parent"
+                                  android:layout_weight="1"
 	                    android:layout_height="wrap_content">
                                   <Button android:layout_width="0dp"
                                       android:layout_height="35dp"

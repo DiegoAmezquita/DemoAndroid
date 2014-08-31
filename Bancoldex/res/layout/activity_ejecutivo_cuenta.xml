@@ -37,7 +37,12 @@
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
                     android:orientation="vertical" >
-
+					<fragment
+                        android:id="@+id/map"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        class="com.google.android.gms.maps.SupportMapFragment"
+                        android:visibility="gone" />
                     <ImageView
                         android:id="@+id/imageAnimation"
                         android:layout_width="wrap_content"
@@ -325,6 +330,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/buttonOficinasEj"
                         android:layout_width="0dp"
                         android:layout_height="fill_parent"
                         android:layout_gravity="center"
