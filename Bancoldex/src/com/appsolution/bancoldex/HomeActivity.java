@@ -1,5 +1,7 @@
 package com.appsolution.bancoldex;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
@@ -12,8 +14,11 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.widget.TableRow;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TableLayout;
 
 public class HomeActivity extends ActionBarActivity implements NavigationDrawerFragment.NavigationDrawerCallbacks {
 
@@ -28,20 +33,27 @@ public class HomeActivity extends ActionBarActivity implements NavigationDrawerF
 	 * {@link #restoreActionBar()}.
 	 */
 	private CharSequence mTitle;
+//	
+//	private TableRow rowFirstConfig_1;
+//	private TableRow rowFirstConfig_2;
+//	private TableRow rowSecondtConfig_1;
 	
-	private TableRow rowFirstConfig_1;
-	private TableRow rowFirstConfig_2;
-	private TableRow rowSecondtConfig_1;
+	LinearLayout linearLayoutTestFive;
+LinearLayout linearLayoutTestFour;
+	
+	
+	TableLayout layoutFiveButtons;
+	TableLayout layoutFourButtons;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_home);
 		
-		rowFirstConfig_1=(TableRow)findViewById(R.id.firstConfig_1);
-		rowFirstConfig_2=(TableRow)findViewById(R.id.firstConfig_2);
-		
-		rowSecondtConfig_1=(TableRow)findViewById(R.id.secondConfig_1);
+//		rowFirstConfig_1=(TableRow)findViewById(R.id.firstConfig_1);
+//		rowFirstConfig_2=(TableRow)findViewById(R.id.firstConfig_2);
+//		
+//		rowSecondtConfig_1=(TableRow)findViewById(R.id.secondConfig_1);
 		
 		mNavigationDrawerFragment = (NavigationDrawerFragment) getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
 		mTitle = getTitle();
@@ -65,22 +77,112 @@ public class HomeActivity extends ActionBarActivity implements NavigationDrawerF
 		View v = inflator.inflate(R.layout.topbarview, null);
 
 		actionBar.setCustomView(v);
-		showBottomMenuFiveButtons();
+//		showBottomMenuFiveButtons();
+		
+				
+		linearLayoutTestFive = (LinearLayout)findViewById(R.id.buttonNeedCreditFour);
+		linearLayoutTestFive.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				loadFourItems();
+				
+			}
+		});
+		
+		
+		linearLayoutTestFour = (LinearLayout)findViewById(R.id.buttonNeedCredit);
+		linearLayoutTestFour.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				loadFiveItems();
+				
+			}
+		});
+		
+		
+		layoutFiveButtons = (TableLayout)findViewById(R.id.tableMenuDown);
+		layoutFourButtons = (TableLayout)findViewById(R.id.tableMenuFourButtons);
+		
+		
+		layoutFourButtons.animate()
+		.translationX(-800)
+		.setDuration(0);
+		
 		//showBottomMenuFourButtons();
 	}
 	
-	
-	public void showBottomMenuFourButtons(){
-		rowFirstConfig_1.setVisibility(View.VISIBLE);
-		rowFirstConfig_2.setVisibility(View.VISIBLE);
-		rowSecondtConfig_1.setVisibility(View.GONE);
+	public void loadFourItems(){
+		int mShortAnimationDuration =getResources().getInteger(android.R.integer.config_longAnimTime);
+		
+		layoutFiveButtons.animate()
+		.translationX(800)
+        .setDuration(mShortAnimationDuration)
+        .setListener(new AnimatorListenerAdapter() {
+        	
+            @Override
+            public void onAnimationEnd(Animator animation) {
+//                mLoadingView.setVisibility(View.GONE);
+            }
+        });
+		
+		
+		layoutFourButtons.animate()
+		.translationX(0)
+        .setDuration(mShortAnimationDuration)
+        .setListener(new AnimatorListenerAdapter() {
+        	
+            @Override
+            public void onAnimationEnd(Animator animation) {
+//                mLoadingView.setVisibility(View.GONE);
+            }
+        });
+		
 	}
 	
-	public void showBottomMenuFiveButtons(){
-		rowFirstConfig_1.setVisibility(View.GONE);
-		rowFirstConfig_2.setVisibility(View.GONE);
-		rowSecondtConfig_1.setVisibility(View.VISIBLE);
+	
+	public void loadFiveItems(){
+		int mShortAnimationDuration =getResources().getInteger(android.R.integer.config_longAnimTime);
+		
+		layoutFiveButtons.animate()
+		.translationX(0)
+        .setDuration(mShortAnimationDuration)
+        .setListener(new AnimatorListenerAdapter() {
+        	
+            @Override
+            public void onAnimationEnd(Animator animation) {
+//                mLoadingView.setVisibility(View.GONE);
+            }
+        });
+		
+		
+		layoutFourButtons.animate()
+		.translationX(-800)
+        .setDuration(mShortAnimationDuration)
+        .setListener(new AnimatorListenerAdapter() {
+        	
+            @Override
+            public void onAnimationEnd(Animator animation) {
+//                mLoadingView.setVisibility(View.GONE);
+            }
+        });
+		
 	}
+	
+	
+	
+//	public void showBottomMenuFiveButtons(){
+//		rowFirstConfig_1.setVisibility(View.VISIBLE);
+//		rowFirstConfig_2.setVisibility(View.VISIBLE);
+//		rowSecondtConfig_1.setVisibility(View.GONE);
+//	}
+//	
+//	public void showBottomMenuFourButtons(){
+//		rowFirstConfig_1.setVisibility(View.GONE);
+//		rowFirstConfig_2.setVisibility(View.GONE);
+//		rowSecondtConfig_1.setVisibility(View.VISIBLE);
+//	}
 
 	@Override
 	public void onNavigationDrawerItemSelected(int position) {
