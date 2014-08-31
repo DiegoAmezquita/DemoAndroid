@@ -99,10 +99,10 @@ public class NavigationDrawerFragmentLogin extends Fragment {
 		boolean dataValid = true;
 
 		if (textUserEditText.isEmpty()) {
-			editTextUser.setError("El campo no puede estar vacio");
+//			editTextUser.setError("El campo no puede estar vacio");
 			dataValid = false;
 		} else if (textPasswordEditText.isEmpty()) {
-			editTextPassword.setError("El campo no puede estar vacio");
+//			editTextPassword.setError("El campo no puede estar vacio");
 			dataValid = false;
 		}
 
@@ -120,6 +120,9 @@ public class NavigationDrawerFragmentLogin extends Fragment {
 				Intent intent = new Intent(getActivity(), LoggedEjecutivoCuentaActivity.class);
 				startActivity(intent);
 			}
+		}else{
+			Intent intent = new Intent(getActivity(), LoggedEmpresarioActivity.class);
+			startActivity(intent);
 		}
 		
 		

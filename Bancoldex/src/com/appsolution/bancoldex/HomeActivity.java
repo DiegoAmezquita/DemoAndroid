@@ -186,6 +186,23 @@ public class HomeActivity extends FragmentActivity implements NavigationDrawerFr
 				contentTwo.setVisibility(TableLayout.GONE);
 			}
 		});
+		
+		LinearLayout buttonShowBanks = (LinearLayout) findViewById(R.id.buttonShowBanks);
+		buttonShowBanks.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+				contentMap.setVisibility(FrameLayout.VISIBLE);
+				setUpMapIfNeeded();
+				contentTwo.setVisibility(TableLayout.GONE);
+			}
+		});
+		
+		
+		
+		
+		
+		
 
 		contentMap = (FrameLayout) findViewById(R.id.containerMap);
 		
