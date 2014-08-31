@@ -33,16 +33,56 @@
                     android:src="@drawable/header_shadow" />
 
                 <FrameLayout
-                    android:id="@+id/containerContentOne"
+                    android:id="@+id/containerMap"
                     android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:orientation="vertical" >
+                    android:layout_height="fill_parent" >
+
+                    <fragment
+                        xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:id="@+id/map"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        class="com.google.android.gms.maps.SupportMapFragment"
+                        android:visibility="gone" />
 
                     <ImageView
                         android:id="@+id/imageAnimation"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingRight="5dp"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:visibility="gone"
+                        android:src="@drawable/image_background" />
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:visibility="gone" >
+
+                        <ImageView
+                            android:layout_width="300dp"
+                            android:layout_height="300dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginLeft="320dp"
+                            android:layout_marginTop="300dp"
+                            android:src="@drawable/texto_triangulo" />
+                    </RelativeLayout>
+                </FrameLayout>
+                
+                <FrameLayout
+                    android:id="@+id/containerContentOne"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent" >
+
+                    <ImageView
+                        android:id="@+id/imageAnimation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="5dp"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
                         android:src="@drawable/image_background" />
 
                     <RelativeLayout
@@ -382,22 +422,9 @@
                     </LinearLayout>
                 </TableRow>
             </TableLayout>
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
+
             <!-- Y Que oportunidades hay -->
-            
-            
-            
+
             <TableLayout
                 android:id="@+id/tableQueOportunidadesHay"
                 android:layout_width="fill_parent"
@@ -418,7 +445,7 @@
                         android:layout_height="fill_parent"
                         android:layout_gravity="center"
                         android:layout_weight="1"
-                        android:background="@drawable/big_button_normal"
+                        android:background="@drawable/big_button_selected"
                         android:gravity="center"
                         android:orientation="horizontal" >
 
@@ -511,6 +538,7 @@
                     android:visibility="visible" >
 
                     <LinearLayout
+                        android:id="@+id/buttonShowMap"
                         android:layout_width="0dp"
                         android:layout_height="fill_parent"
                         android:layout_gravity="center"
@@ -565,25 +593,9 @@
                     </LinearLayout>
                 </TableRow>
             </TableLayout>
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
+
             <!-- Con quien hablo? -->
-            
+
             <TableLayout
                 android:id="@+id/tableConQuienHablo"
                 android:layout_width="fill_parent"
@@ -717,20 +729,9 @@
                     </LinearLayout>
                 </TableRow>
             </TableLayout>
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
+
             <!-- Como me puede ayudar Bancoldex? -->
-            
+
             <TableLayout
                 android:id="@+id/tableComoMePuedeAyudarBancoldex"
                 android:layout_width="fill_parent"
@@ -864,15 +865,7 @@
                     </LinearLayout>
                 </TableRow>
             </TableLayout>
-            
-            
-            
-            
-            
-            
-            
-            
-            
+
             <TableLayout
                 android:id="@+id/tableInteligenciaFinanciera"
                 android:layout_width="fill_parent"
@@ -893,7 +886,7 @@
                         android:layout_height="fill_parent"
                         android:layout_gravity="center"
                         android:layout_weight="1"
-                        android:background="@drawable/big_button_normal"
+                        android:background="@drawable/big_button_selected"
                         android:gravity="center"
                         android:orientation="horizontal" >
 
@@ -1040,11 +1033,6 @@
                     </LinearLayout>
                 </TableRow>
             </TableLayout>
-            
-            
-            
-            
-            
         </RelativeLayout>
         <!-- End Panel bottom menu -->
     </LinearLayout>
