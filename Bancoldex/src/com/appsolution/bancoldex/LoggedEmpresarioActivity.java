@@ -34,17 +34,18 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.GoogleMap.OnMyLocationButtonClickListener;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 public class LoggedEmpresarioActivity extends ActionBarActivity implements NavigationDrawerFragment.NavigationDrawerCallbacks, ConnectionCallbacks, OnConnectionFailedListener,
 		LocationListener, OnMyLocationButtonClickListener {
 
-	private static final LocationRequest REQUEST = LocationRequest.create()
-            .setInterval(5000)         // 5 seconds
-            .setFastestInterval(16)    // 16ms = 60fps
-            .setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
-	
+	private static final LocationRequest REQUEST = LocationRequest.create().setInterval(5000) // 5
+																								// seconds
+			.setFastestInterval(16) // 16ms = 60fps
+			.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
+
 	/**
 	 * Fragment managing the behaviors, interactions and presentation of the
 	 * navigation drawer.
@@ -65,10 +66,9 @@ public class LoggedEmpresarioActivity extends ActionBarActivity implements Navig
 	TableLayout layoutInteligenciaFinanciera;
 	TableLayout layoutMisProcesos;
 	TableLayout layoutReferidos;
-	
 
 	FrameLayout contentMap;
-	
+
 	FrameLayout contentOne;
 	LinearLayout contentTwo;
 
@@ -87,9 +87,9 @@ public class LoggedEmpresarioActivity extends ActionBarActivity implements Navig
 		mTitle = getTitle();
 
 		// Set up the drawer.
-		//mNavigationDrawerFragment.setUp(R.id.navigation_drawer, (DrawerLayout) findViewById(R.id.drawer_layout));
+		// mNavigationDrawerFragment.setUp(R.id.navigation_drawer,
+		// (DrawerLayout) findViewById(R.id.drawer_layout));
 
-		
 		// Set up the drawer.
 		ActionBar actionBar = getActionBar();
 		actionBar.setDisplayHomeAsUpEnabled(false);
@@ -98,10 +98,10 @@ public class LoggedEmpresarioActivity extends ActionBarActivity implements Navig
 		actionBar.setTitle("");
 		actionBar.setIcon(null);
 		mNavigationDrawerFragment.setUp(R.id.navigation_drawer, (DrawerLayout) findViewById(R.id.drawer_layout));
-		
+
 		LayoutInflater inflator = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		View v = inflator.inflate(R.layout.topbarview, null);
-		
+
 		actionBar.setCustomView(v);
 		// showBottomMenuFiveButtons();
 
@@ -149,7 +149,7 @@ public class LoggedEmpresarioActivity extends ActionBarActivity implements Navig
 				loadInteligenciaFinanciera();
 			}
 		});
-		
+
 		LinearLayout buttonShowMap = (LinearLayout) findViewById(R.id.buttonShowMap);
 		buttonShowMap.setOnClickListener(new OnClickListener() {
 
@@ -160,31 +160,24 @@ public class LoggedEmpresarioActivity extends ActionBarActivity implements Navig
 				contentTwo.setVisibility(TableLayout.GONE);
 			}
 		});
-		
-		LinearLayout buttonMisProcesos=(LinearLayout)findViewById(R.id.buttonMisProcesos);
-		buttonMisProcesos.setOnClickListener(new OnClickListener(){
+
+		LinearLayout buttonMisProcesos = (LinearLayout) findViewById(R.id.buttonMisProcesos);
+		buttonMisProcesos.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
-				 
-				TableLayout fourButtons = (TableLayout) findViewById(R.id.tableMisProcesos);
-				Toast.makeText(getApplicationContext(), "Procesos", Toast.LENGTH_SHORT).show();
-				 loadMisProcesos();
-			}
-		});
-		
-		LinearLayout buttonReferidos=(LinearLayout)findViewById(R.id.buttonReferidos);
-		buttonReferidos.setOnClickListener(new OnClickListener(){
-			@Override
-			public void onClick(View arg0) {
-				 
-				TableLayout fourButtons = (TableLayout) findViewById(R.id.tableMisProcesos);
-				Toast.makeText(getApplicationContext(), "Referidos", Toast.LENGTH_SHORT).show();
-			 loadProgramaReferidos();
+				loadMisProcesos();
 			}
 		});
 
-		
-		contentMap = (FrameLayout)findViewById(R.id.containerMap);
+		LinearLayout buttonReferidos = (LinearLayout) findViewById(R.id.buttonReferidos);
+		buttonReferidos.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View arg0) {
+				loadProgramaReferidos();
+			}
+		});
+
+		contentMap = (FrameLayout) findViewById(R.id.containerMap);
 
 		layoutMainNotLogged = (TableLayout) findViewById(R.id.tableMainNotLogged);
 		layoutNecesitoUnCredito = (TableLayout) findViewById(R.id.tableNecesitoUnCredito);
@@ -198,16 +191,37 @@ public class LoggedEmpresarioActivity extends ActionBarActivity implements Navig
 		layoutQueOportunidadesHay.animate().translationX(-800).setDuration(0);
 		layoutConQuienHablo.animate().translationX(-800).setDuration(0);
 		layoutComoMePuedeAyudarBancoldex.animate().translationX(-800).setDuration(0);
+
 		layoutReferidos.animate().translationX(-800).setDuration(0);
 		layoutInteligenciaFinanciera.animate().translationX(-800).setDuration(0);
 		layoutMisProcesos.animate().translationX(-800).setDuration(0);
 
+		layoutReferidos.setVisibility(View.GONE);
+		layoutInteligenciaFinanciera.setVisibility(View.GONE);
+		layoutMisProcesos.setVisibility(View.GONE);
+		layoutConQuienHablo.setVisibility(View.GONE);
+		layoutComoMePuedeAyudarBancoldex.setVisibility(View.GONE);
+		layoutQueOportunidadesHay.setVisibility(View.GONE);
+		layoutNecesitoUnCredito.setVisibility(View.GONE);
+
 		contentOne = (FrameLayout) findViewById(R.id.containerContentOne);
 		contentTwo = (LinearLayout) findViewById(R.id.containerContentTwo);
 
-		contentTwo.animate().translationX(-800).setDuration(0);
+		contentTwo.animate().translationX(-800).setDuration(0).setListener(new AnimatorListenerAdapter() {
+			@Override
+			public void onAnimationEnd(Animator animation) {
+				layoutReferidos.setVisibility(View.VISIBLE);
+				layoutInteligenciaFinanciera.setVisibility(View.VISIBLE);
+				layoutMisProcesos.setVisibility(View.VISIBLE);
+				layoutConQuienHablo.setVisibility(View.VISIBLE);
+				layoutComoMePuedeAyudarBancoldex.setVisibility(View.VISIBLE);
+				layoutQueOportunidadesHay.setVisibility(View.VISIBLE);
+				layoutNecesitoUnCredito.setVisibility(View.VISIBLE);
+				super.onAnimationEnd(animation);
+			}
+		});
 
-		imagetViewAnimate = (ImageView) findViewById(R.id.imageAnimation);
+		imagetViewAnimate = (ImageView) findViewById(R.id.imageAnimationMain);
 
 		imagetViewAnimate.animate().scaleX(1.3f).setDuration(0);
 		imagetViewAnimate.animate().scaleY(1.3f).setDuration(0);
@@ -254,9 +268,7 @@ public class LoggedEmpresarioActivity extends ActionBarActivity implements Navig
 	}
 
 	public void loadMainNotLogged() {
-		
-		
-		
+
 		int mShortAnimationDuration = getResources().getInteger(android.R.integer.config_longAnimTime);
 
 		layoutMainNotLogged.animate().translationX(0).setDuration(mShortAnimationDuration);
@@ -274,7 +286,7 @@ public class LoggedEmpresarioActivity extends ActionBarActivity implements Navig
 	}
 
 	public void loadNecesitoUnCredito() {
-//		contentMap.setVisibility(FrameLayout.GONE);
+		// contentMap.setVisibility(FrameLayout.GONE);
 		contentTwo.setVisibility(TableLayout.VISIBLE);
 		final int mShortAnimationDuration = getResources().getInteger(android.R.integer.config_longAnimTime);
 
@@ -286,7 +298,7 @@ public class LoggedEmpresarioActivity extends ActionBarActivity implements Navig
 	}
 
 	public void loadQueOportunidadesHay() {
-//		contentMap.setVisibility(FrameLayout.GONE);
+		// contentMap.setVisibility(FrameLayout.GONE);
 		contentTwo.setVisibility(TableLayout.VISIBLE);
 		final int mShortAnimationDuration = getResources().getInteger(android.R.integer.config_longAnimTime);
 
@@ -294,13 +306,13 @@ public class LoggedEmpresarioActivity extends ActionBarActivity implements Navig
 		layoutQueOportunidadesHay.animate().translationX(0).setDuration(mShortAnimationDuration);
 		contentOne.animate().translationX(800).setDuration(mShortAnimationDuration);
 		contentTwo.animate().translationX(0).setDuration(mShortAnimationDuration);
-		
+
 		contentMap.animate().translationX(0).setDuration(mShortAnimationDuration);
 
 	}
-	
+
 	public void loadMisProcesos() {
-//		contentMap.setVisibility(FrameLayout.GONE);
+		// contentMap.setVisibility(FrameLayout.GONE);
 		contentTwo.setVisibility(TableLayout.VISIBLE);
 		final int mShortAnimationDuration = getResources().getInteger(android.R.integer.config_longAnimTime);
 		layoutMisProcesos.setVisibility(TableLayout.VISIBLE);
@@ -308,13 +320,13 @@ public class LoggedEmpresarioActivity extends ActionBarActivity implements Navig
 		layoutMisProcesos.animate().translationX(0).setDuration(mShortAnimationDuration);
 		contentOne.animate().translationX(800).setDuration(mShortAnimationDuration);
 		contentTwo.animate().translationX(0).setDuration(mShortAnimationDuration);
-		
-//		contentMap.animate().translationX(0).setDuration(mShortAnimationDuration);
+
+		// contentMap.animate().translationX(0).setDuration(mShortAnimationDuration);
 
 	}
-	
+
 	public void loadProgramaReferidos() {
-//		contentMap.setVisibility(FrameLayout.GONE);
+		// contentMap.setVisibility(FrameLayout.GONE);
 		contentTwo.setVisibility(TableLayout.VISIBLE);
 		final int mShortAnimationDuration = getResources().getInteger(android.R.integer.config_longAnimTime);
 		layoutReferidos.setVisibility(TableLayout.VISIBLE);
@@ -322,13 +334,13 @@ public class LoggedEmpresarioActivity extends ActionBarActivity implements Navig
 		layoutReferidos.animate().translationX(0).setDuration(mShortAnimationDuration);
 		contentOne.animate().translationX(800).setDuration(mShortAnimationDuration);
 		contentTwo.animate().translationX(0).setDuration(mShortAnimationDuration);
-		
-//		contentMap.animate().translationX(0).setDuration(mShortAnimationDuration);
+
+		// contentMap.animate().translationX(0).setDuration(mShortAnimationDuration);
 
 	}
 
 	public void loadConQuienHablo() {
-//		contentMap.setVisibility(FrameLayout.GONE);
+		// contentMap.setVisibility(FrameLayout.GONE);
 		contentTwo.setVisibility(TableLayout.VISIBLE);
 		final int mShortAnimationDuration = getResources().getInteger(android.R.integer.config_longAnimTime);
 
@@ -340,7 +352,7 @@ public class LoggedEmpresarioActivity extends ActionBarActivity implements Navig
 	}
 
 	public void loadComoMePuedeAyudarBancoldex() {
-//		contentMap.setVisibility(FrameLayout.GONE);
+		// contentMap.setVisibility(FrameLayout.GONE);
 		contentTwo.setVisibility(TableLayout.VISIBLE);
 		final int mShortAnimationDuration = getResources().getInteger(android.R.integer.config_longAnimTime);
 
@@ -352,7 +364,7 @@ public class LoggedEmpresarioActivity extends ActionBarActivity implements Navig
 	}
 
 	public void loadInteligenciaFinanciera() {
-//		contentMap.setVisibility(FrameLayout.GONE);
+		// contentMap.setVisibility(FrameLayout.GONE);
 		contentTwo.setVisibility(TableLayout.VISIBLE);
 		final int mShortAnimationDuration = getResources().getInteger(android.R.integer.config_longAnimTime);
 
@@ -388,6 +400,7 @@ public class LoggedEmpresarioActivity extends ActionBarActivity implements Navig
 		actionBar.setDisplayShowTitleEnabled(true);
 
 	}
+
 	public void onSectionAttached(int number) {
 		switch (number) {
 		case 1:
@@ -401,6 +414,7 @@ public class LoggedEmpresarioActivity extends ActionBarActivity implements Navig
 			break;
 		}
 	}
+
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		if (!mNavigationDrawerFragment.isDrawerOpen()) {
@@ -468,23 +482,23 @@ public class LoggedEmpresarioActivity extends ActionBarActivity implements Navig
 		super.onResume();
 		setUpMapIfNeeded();
 		setUpLocationClientIfNeeded();
-        mLocationClient.connect();
+		mLocationClient.connect();
 	}
 
 	private void setUpMapIfNeeded() {
-        // Do a null check to confirm that we have not already instantiated the map.
-        if (mMap == null) {
-            // Try to obtain the map from the SupportMapFragment.
-            mMap = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map))
-                    .getMap();
-            // Check if we were successful in obtaining the map.
-            if (mMap != null) {
-//            	setUpMap();
-                mMap.setMyLocationEnabled(true);
-                mMap.setOnMyLocationButtonClickListener(this);
-            }
-        }
-    }
+		// Do a null check to confirm that we have not already instantiated the
+		// map.
+		if (mMap == null) {
+			// Try to obtain the map from the SupportMapFragment.
+			mMap = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map)).getMap();
+			// Check if we were successful in obtaining the map.
+			if (mMap != null) {
+				 setUpMap();
+//				mMap.setMyLocationEnabled(true);
+//				mMap.setOnMyLocationButtonClickListener(this);
+			}
+		}
+	}
 
 	/**
 	 * This is where we can add markers or lines, add listeners or move the
@@ -494,74 +508,83 @@ public class LoggedEmpresarioActivity extends ActionBarActivity implements Navig
 	 * is not null.
 	 */
 	private void setUpMap() {
-		mMap.addMarker(new MarkerOptions().position(new LatLng(0, 0)).title("Marker"));
+		LatLng latlong = new LatLng(4.5981, -74.0758);
+		LatLng latlong1 = new LatLng(4.5981, -74.0768);
+		LatLng latlong2 = new LatLng(4.5931, -74.1228);
+		LatLng latlong3 = new LatLng(4.6981, -74.0758);
+		
+		mMap.animateCamera(CameraUpdateFactory.zoomIn());
+		mMap.animateCamera(CameraUpdateFactory.newLatLng(latlong));
+		
+
+		mMap.addMarker(new MarkerOptions().position(latlong1).title("Bancolombia").icon(BitmapDescriptorFactory.fromResource(R.drawable.pin_map)));
+		mMap.addMarker(new MarkerOptions().position(latlong2).title("Banco de Bogota").icon(BitmapDescriptorFactory.fromResource(R.drawable.pin_map)));
+		mMap.addMarker(new MarkerOptions().position(latlong3).title("Corpbanca").icon(BitmapDescriptorFactory.fromResource(R.drawable.pin_map)));
 	}
-	
+
 	private void setUpLocationClientIfNeeded() {
-        if (mLocationClient == null) {
-            mLocationClient = new LocationClient(
-                    getApplicationContext(),
-                    this,  // ConnectionCallbacks
-                    this); // OnConnectionFailedListener
-        }
-    }
+		if (mLocationClient == null) {
+			mLocationClient = new LocationClient(getApplicationContext(), this, // ConnectionCallbacks
+					this); // OnConnectionFailedListener
+		}
+	}
 
-    /**
-     * Button to get current Location. This demonstrates how to get the current Location as required
-     * without needing to register a LocationListener.
-     */
-    public void showMyLocation(View view) {
-        if (mLocationClient != null && mLocationClient.isConnected()) {
-            String msg = "Location = " + mLocationClient.getLastLocation();
-            Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_SHORT).show();
-        }
-    }
+	/**
+	 * Button to get current Location. This demonstrates how to get the current
+	 * Location as required without needing to register a LocationListener.
+	 */
+	public void showMyLocation(View view) {
+		if (mLocationClient != null && mLocationClient.isConnected()) {
+			String msg = "Location = " + mLocationClient.getLastLocation();
+			Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_SHORT).show();
+		}
+	}
 
-    /**
-     * Implementation of {@link LocationListener}.
-     */
-    @Override
-    public void onLocationChanged(Location location) {
-       Log.v("BANCOLDEX","Location = " + location);
-       LatLng latlong = new LatLng(location.getLatitude(),
-               location.getLongitude());
-       
-       mMap.animateCamera(CameraUpdateFactory.newLatLng(latlong));
-       mMap.animateCamera(CameraUpdateFactory.zoomBy(15));
-    }
+	/**
+	 * Implementation of {@link LocationListener}.
+	 */
+	@Override
+	public void onLocationChanged(Location location) {
+		Log.v("BANCOLDEX", "Location = " + location);
+		LatLng latlong = new LatLng(location.getLatitude(), location.getLongitude());
 
-    /**
-     * Callback called when connected to GCore. Implementation of {@link ConnectionCallbacks}.
-     */
-    @Override
-    public void onConnected(Bundle connectionHint) {
-        mLocationClient.requestLocationUpdates(
-                REQUEST,
-                this);  // LocationListener
-    }
+		mMap.animateCamera(CameraUpdateFactory.newLatLng(latlong));
+		mMap.animateCamera(CameraUpdateFactory.zoomBy(15));
+	}
 
-    /**
-     * Callback called when disconnected from GCore. Implementation of {@link ConnectionCallbacks}.
-     */
-    @Override
-    public void onDisconnected() {
-        // Do nothing
-    }
+	/**
+	 * Callback called when connected to GCore. Implementation of
+	 * {@link ConnectionCallbacks}.
+	 */
+	@Override
+	public void onConnected(Bundle connectionHint) {
+		mLocationClient.requestLocationUpdates(REQUEST, this); // LocationListener
+	}
 
-    /**
-     * Implementation of {@link OnConnectionFailedListener}.
-     */
-    @Override
-    public void onConnectionFailed(ConnectionResult result) {
-        // Do nothing
-    }
+	/**
+	 * Callback called when disconnected from GCore. Implementation of
+	 * {@link ConnectionCallbacks}.
+	 */
+	@Override
+	public void onDisconnected() {
+		// Do nothing
+	}
 
-    @Override
-    public boolean onMyLocationButtonClick() {
-        Toast.makeText(this, "MyLocation button clicked", Toast.LENGTH_SHORT).show();
-        // Return false so that we don't consume the event and the default behavior still occurs
-        // (the camera animates to the user's current position).
-        return false;
-    }
+	/**
+	 * Implementation of {@link OnConnectionFailedListener}.
+	 */
+	@Override
+	public void onConnectionFailed(ConnectionResult result) {
+		// Do nothing
+	}
+
+	@Override
+	public boolean onMyLocationButtonClick() {
+		Toast.makeText(this, "MyLocation button clicked", Toast.LENGTH_SHORT).show();
+		// Return false so that we don't consume the event and the default
+		// behavior still occurs
+		// (the camera animates to the user's current position).
+		return false;
+	}
 
 }

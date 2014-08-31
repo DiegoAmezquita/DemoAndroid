@@ -241,7 +241,7 @@ public class LoggedIntermediarioActivity extends ActionBarActivity implements Na
 		
 		
 		
-		imagetViewAnimate = (ImageView)findViewById(R.id.imageAnimation);
+		imagetViewAnimate = (ImageView)findViewById(R.id.imageAnimationMain);
 		
 		
 		imagetViewAnimate.animate().scaleX(1.3f).setDuration(0);

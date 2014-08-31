@@ -165,7 +165,7 @@
                             <TextView
                                 android:id="@+id/textTwo"
                                 android:layout_width="fill_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:gravity="center"
                                 android:text="Destino del credito"
                                 android:textColor="#fff"
@@ -194,7 +194,7 @@
                             <TextView
                                 android:id="@+id/textThree"
                                 android:layout_width="150dp"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:gravity="center"
                                 android:text="Intermediario Financiero"
                                 android:textColor="#fff"
@@ -223,7 +223,7 @@
                             <TextView
                                 android:id="@+id/textFour"
                                 android:layout_width="150dp"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:gravity="center"
                                 android:text="Actividad Empresarial"
                                 android:textColor="#fff"
@@ -797,6 +797,7 @@
                     android:padding="0dp" >
 
                     <LinearLayout
+                        android:id="@+id/buttonShowBanks"
                         android:layout_width="0dp"
                         android:layout_height="fill_parent"
                         android:layout_gravity="center"
