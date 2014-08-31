@@ -27,7 +27,7 @@ public class HomeActivity extends ActionBarActivity implements NavigationDrawerF
 	 * Fragment managing the behaviors, interactions and presentation of the
 	 * navigation drawer.
 	 */
-	private NavigationDrawerFragment mNavigationDrawerFragment;
+	private NavigationDrawerFragmentLogin mNavigationDrawerFragment;
 
 	/**
 	 * Used to store the last screen title. For use in
@@ -62,7 +62,7 @@ public class HomeActivity extends ActionBarActivity implements NavigationDrawerF
 		//
 		// rowSecondtConfig_1=(TableRow)findViewById(R.id.secondConfig_1);
 
-		mNavigationDrawerFragment = (NavigationDrawerFragment) getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
+		mNavigationDrawerFragment = (NavigationDrawerFragmentLogin) getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
 		mTitle = getTitle();
 
 		// Set up the drawer.

@@ -1,6 +1,7 @@
 package com.appsolution.bancoldex;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
@@ -106,6 +107,8 @@ public class NavigationDrawerFragmentLogin extends Fragment {
 				Toast.makeText(getActivity(), "Empresario", Toast.LENGTH_SHORT).show();
 			} else if (textUserEditText.equals(userIntermediario) && textPasswordEditText.equals(passwordIntermediario)) {
 				Toast.makeText(getActivity(), "Intermediario", Toast.LENGTH_SHORT).show();
+				Intent intent = new Intent(getActivity(), LoggedIntermediarioActivity.class);
+				startActivity(intent);
 			}
 		}
 
