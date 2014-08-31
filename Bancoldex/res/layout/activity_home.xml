@@ -24,14 +24,49 @@
             <FrameLayout
                 android:id="@+id/container"
                 android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:background="@drawable/image_background" >
+                android:layout_height="fill_parent" >
 
                 <ImageView
                     android:id="@+id/headerShadow"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/header_shadow" />
+
+                <FrameLayout
+                    android:id="@+id/containerContentOne"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical" >
+
+                    <ImageView
+                        android:id="@+id/imageAnimation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="5dp"
+                        android:src="@drawable/image_background" />
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent" >
+
+                        <ImageView
+                            android:layout_width="300dp"
+                            android:layout_height="300dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginLeft="320dp"
+                            android:layout_marginTop="300dp"
+                            android:src="@drawable/texto_triangulo" />
+                    </RelativeLayout>
+                </FrameLayout>
+
+                <LinearLayout
+                    android:id="@+id/containerContentTwo"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="@drawable/image_background"
+                    android:orientation="vertical" >
+                </LinearLayout>
             </FrameLayout>
         </RelativeLayout>
 
@@ -62,7 +97,7 @@
                         android:layout_height="fill_parent"
                         android:layout_gravity="center"
                         android:layout_weight="1"
-                        android:background="@drawable/big_button_selected"
+                        android:background="@drawable/big_button_normal"
                         android:gravity="center"
                         android:orientation="horizontal" >
 
@@ -245,10 +280,9 @@
                             android:id="@+id/xSettingsTxt"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Necesito un crédito" />
+                            android:text="Necesito un Crédito" />
                     </LinearLayout>
                 </TableRow>
-                La fila con 3 botones
 
                 <TableRow
                     android:id="@+id/secondConfig_1"
@@ -282,7 +316,7 @@
                             android:layout_alignParentBottom="true"
                             android:layout_centerHorizontal="true"
                             android:gravity="center"
-                            android:text="Qué oportunidades hay?"
+                            android:text="Asesoría paso a paso"
                             android:textColor="#9E9E9E" />
                     </LinearLayout>
 
@@ -311,7 +345,7 @@
                             android:layout_alignParentBottom="true"
                             android:layout_centerHorizontal="true"
                             android:gravity="center"
-                            android:text="Con quien hablo?"
+                            android:text="Simular mi Crédito"
                             android:textColor="#9E9E9E" />
                     </LinearLayout>
 
@@ -339,7 +373,7 @@
                             android:layout_alignParentBottom="true"
                             android:layout_centerHorizontal="true"
                             android:gravity="center"
-                            android:text="Inteligencia Financiera"
+                            android:text="Que me ofrece Bancoldex?"
                             android:textColor="#9E9E9E" />
                     </LinearLayout>
                 </TableRow>
