@@ -29,21 +29,18 @@ public class HomeActivity extends ActionBarActivity implements NavigationDrawerF
 	 */
 	private NavigationDrawerFragmentLogin mNavigationDrawerFragment;
 
-	/**
-	 * Used to store the last screen title. For use in
-	 * {@link #restoreActionBar()}.
-	 */
-	private CharSequence mTitle;
-	//
-	// private TableRow rowFirstConfig_1;
-	// private TableRow rowFirstConfig_2;
-	// private TableRow rowSecondtConfig_1;
+	LinearLayout buttonNecesitoUnCredito;
+	LinearLayout buttonQueOportunidadesHay;
+	LinearLayout buttonConQuienHablo;
+	LinearLayout buttonComoMePuedeAyudarBancoldex;
+	LinearLayout buttonInteligenciaFinanciera;
 
-	LinearLayout linearLayoutTestFive;
-	LinearLayout linearLayoutTestFour;
-
-	TableLayout layoutFiveButtons;
-	TableLayout layoutFourButtons;
+	TableLayout layoutMainNotLogged;
+	TableLayout layoutQueOportunidadesHay;
+	TableLayout layoutNecesitoUnCredito;
+	TableLayout layoutConQuienHablo;
+	TableLayout layoutComoMePuedeAyudarBancoldex;
+	TableLayout layoutInteligenciaFinanciera;
 
 	
 	FrameLayout contentOne;
@@ -57,15 +54,8 @@ public class HomeActivity extends ActionBarActivity implements NavigationDrawerF
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_home);
 
-		// rowFirstConfig_1=(TableRow)findViewById(R.id.firstConfig_1);
-		// rowFirstConfig_2=(TableRow)findViewById(R.id.firstConfig_2);
-		//
-		// rowSecondtConfig_1=(TableRow)findViewById(R.id.secondConfig_1);
-
 		mNavigationDrawerFragment = (NavigationDrawerFragmentLogin) getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
-		mTitle = getTitle();
 
-		// Set up the drawer.
 		mNavigationDrawerFragment.setUp(R.id.navigation_drawer, (DrawerLayout) findViewById(R.id.drawer_layout));
 
 		// Set up the drawer.
@@ -83,30 +73,70 @@ public class HomeActivity extends ActionBarActivity implements NavigationDrawerF
 		actionBar.setCustomView(v);
 		// showBottomMenuFiveButtons();
 
-		linearLayoutTestFive = (LinearLayout) findViewById(R.id.buttonNeedCreditFour);
-		linearLayoutTestFive.setOnClickListener(new OnClickListener() {
+		buttonNecesitoUnCredito = (LinearLayout) findViewById(R.id.buttonNecesitoUnCredito);
+		buttonNecesitoUnCredito.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View arg0) {
-				loadFourItems();
-
+				loadNecesitoUnCredito();
 			}
 		});
-
-		linearLayoutTestFour = (LinearLayout) findViewById(R.id.buttonNeedCredit);
-		linearLayoutTestFour.setOnClickListener(new OnClickListener() {
+		
+		buttonQueOportunidadesHay = (LinearLayout) findViewById(R.id.buttonQueOportunidadesHay);
+		buttonQueOportunidadesHay.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View arg0) {
-				loadFiveItems();
-
+				loadQueOportunidadesHay();
 			}
 		});
+		
+		buttonConQuienHablo = (LinearLayout) findViewById(R.id.buttonConQuienHablo);
+		buttonConQuienHablo.setOnClickListener(new OnClickListener() {
 
-		layoutFiveButtons = (TableLayout) findViewById(R.id.tableMenuDown);
-		layoutFourButtons = (TableLayout) findViewById(R.id.tableMenuFourButtons);
+			@Override
+			public void onClick(View arg0) {
+				loadConQuienHablo();
+			}
+		});
+		
+		buttonComoMePuedeAyudarBancoldex = (LinearLayout) findViewById(R.id.buttonComoMePuedeAyudarBancoldex);
+		buttonComoMePuedeAyudarBancoldex.setOnClickListener(new OnClickListener() {
 
-		layoutFourButtons.animate().translationX(-800).setDuration(0);
+			@Override
+			public void onClick(View arg0) {
+				loadComoMePuedeAyudarBancoldex();
+			}
+		});
+		
+		buttonInteligenciaFinanciera = (LinearLayout) findViewById(R.id.buttonInteligenciaFinanciera);
+		buttonInteligenciaFinanciera.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+				loadInteligenciaFinanciera();
+			}
+		});
+		
+		
+		
+		
+		
+		
+
+		
+		layoutMainNotLogged = (TableLayout) findViewById(R.id.tableMainNotLogged);
+		layoutNecesitoUnCredito = (TableLayout) findViewById(R.id.tableNecesitoUnCredito);
+		layoutQueOportunidadesHay = (TableLayout) findViewById(R.id.tableQueOportunidadesHay);
+		layoutConQuienHablo = (TableLayout) findViewById(R.id.tableConQuienHablo);
+		layoutComoMePuedeAyudarBancoldex = (TableLayout) findViewById(R.id.tableComoMePuedeAyudarBancoldex);
+		layoutInteligenciaFinanciera = (TableLayout) findViewById(R.id.tableInteligenciaFinanciera);
+		
+		layoutNecesitoUnCredito.animate().translationX(-800).setDuration(0);
+		layoutQueOportunidadesHay.animate().translationX(-800).setDuration(0);
+		layoutConQuienHablo.animate().translationX(-800).setDuration(0);
+		layoutComoMePuedeAyudarBancoldex.animate().translationX(-800).setDuration(0);
+		layoutInteligenciaFinanciera.animate().translationX(-800).setDuration(0);
 
 		
 		contentOne = (FrameLayout) findViewById(R.id.containerContentOne);
@@ -157,39 +187,76 @@ public class HomeActivity extends ActionBarActivity implements NavigationDrawerF
 	
 	@Override
 	public void onBackPressed() {
-		loadFiveItems();
+		loadMainNotLogged();
 
 	}
 	
-	public void loadFourItems() {
-		final int mShortAnimationDuration = getResources().getInteger(android.R.integer.config_longAnimTime);
-		
-		
-
-		layoutFiveButtons.animate().translationX(800).setDuration(mShortAnimationDuration);
-		layoutFourButtons.animate().translationX(0).setDuration(mShortAnimationDuration);
-		contentOne.animate().translationX(800).setDuration(mShortAnimationDuration);
-		contentTwo.animate().translationX(0).setDuration(mShortAnimationDuration);
-
-		
-		
-	}
-
-	public void loadFiveItems() {
+	public void loadMainNotLogged() {
 		int mShortAnimationDuration = getResources().getInteger(android.R.integer.config_longAnimTime);
 
-		layoutFiveButtons.animate().translationX(0).setDuration(mShortAnimationDuration);
-
-		layoutFourButtons.animate().translationX(-800).setDuration(mShortAnimationDuration);
+		layoutMainNotLogged.animate().translationX(0).setDuration(mShortAnimationDuration);
+		layoutNecesitoUnCredito.animate().translationX(-800).setDuration(mShortAnimationDuration);
+		layoutComoMePuedeAyudarBancoldex.animate().translationX(-800).setDuration(mShortAnimationDuration);
+		layoutConQuienHablo.animate().translationX(-800).setDuration(mShortAnimationDuration);
+		layoutInteligenciaFinanciera.animate().translationX(-800).setDuration(mShortAnimationDuration);
+		layoutQueOportunidadesHay.animate().translationX(-800).setDuration(mShortAnimationDuration);
 		
 		contentOne.animate().translationX(0).setDuration(mShortAnimationDuration);
 		contentTwo.animate().translationX(-800).setDuration(mShortAnimationDuration);
-		
-		
-		
-		
 
 	}
+	
+	public void loadNecesitoUnCredito() {
+		final int mShortAnimationDuration = getResources().getInteger(android.R.integer.config_longAnimTime);
+		
+		layoutMainNotLogged.animate().translationX(800).setDuration(mShortAnimationDuration);
+		layoutNecesitoUnCredito.animate().translationX(0).setDuration(mShortAnimationDuration);
+		contentOne.animate().translationX(800).setDuration(mShortAnimationDuration);
+		contentTwo.animate().translationX(0).setDuration(mShortAnimationDuration);
+		
+	}
+	
+	public void loadQueOportunidadesHay() {
+		final int mShortAnimationDuration = getResources().getInteger(android.R.integer.config_longAnimTime);
+		
+		layoutMainNotLogged.animate().translationX(800).setDuration(mShortAnimationDuration);
+		layoutQueOportunidadesHay.animate().translationX(0).setDuration(mShortAnimationDuration);
+		contentOne.animate().translationX(800).setDuration(mShortAnimationDuration);
+		contentTwo.animate().translationX(0).setDuration(mShortAnimationDuration);
+		
+	}
+	
+	public void loadConQuienHablo() {
+		final int mShortAnimationDuration = getResources().getInteger(android.R.integer.config_longAnimTime);
+		
+		layoutMainNotLogged.animate().translationX(800).setDuration(mShortAnimationDuration);
+		layoutConQuienHablo.animate().translationX(0).setDuration(mShortAnimationDuration);
+		contentOne.animate().translationX(800).setDuration(mShortAnimationDuration);
+		contentTwo.animate().translationX(0).setDuration(mShortAnimationDuration);
+		
+	}
+	
+	public void loadComoMePuedeAyudarBancoldex() {
+		final int mShortAnimationDuration = getResources().getInteger(android.R.integer.config_longAnimTime);
+		
+		layoutMainNotLogged.animate().translationX(800).setDuration(mShortAnimationDuration);
+		layoutComoMePuedeAyudarBancoldex.animate().translationX(0).setDuration(mShortAnimationDuration);
+		contentOne.animate().translationX(800).setDuration(mShortAnimationDuration);
+		contentTwo.animate().translationX(0).setDuration(mShortAnimationDuration);
+		
+	}
+	
+	public void loadInteligenciaFinanciera() {
+		final int mShortAnimationDuration = getResources().getInteger(android.R.integer.config_longAnimTime);
+		
+		layoutMainNotLogged.animate().translationX(800).setDuration(mShortAnimationDuration);
+		layoutInteligenciaFinanciera.animate().translationX(0).setDuration(mShortAnimationDuration);
+		contentOne.animate().translationX(800).setDuration(mShortAnimationDuration);
+		contentTwo.animate().translationX(0).setDuration(mShortAnimationDuration);
+		
+	}
+
+	
 
 	// public void showBottomMenuFiveButtons(){
 	// rowFirstConfig_1.setVisibility(View.VISIBLE);
@@ -210,19 +277,6 @@ public class HomeActivity extends ActionBarActivity implements NavigationDrawerF
 		fragmentManager.beginTransaction().replace(R.id.container, PlaceholderFragment.newInstance(position + 1)).commit();
 	}
 
-	public void onSectionAttached(int number) {
-		switch (number) {
-		case 1:
-			mTitle = getString(R.string.title_section1);
-			break;
-		case 2:
-			mTitle = getString(R.string.title_section2);
-			break;
-		case 3:
-			mTitle = getString(R.string.title_section3);
-			break;
-		}
-	}
 
 	public void restoreActionBar() {
 		ActionBar actionBar = getSupportActionBar();
@@ -289,7 +343,6 @@ public class HomeActivity extends ActionBarActivity implements NavigationDrawerF
 		@Override
 		public void onAttach(Activity activity) {
 			super.onAttach(activity);
-			((HomeActivity) activity).onSectionAttached(getArguments().getInt(ARG_SECTION_NUMBER));
 		}
 	}
 

@@ -78,7 +78,7 @@
             android:layout_weight="2" >
 
             <TableLayout
-                android:id="@+id/tableMenuDown"
+                android:id="@+id/tableMainNotLogged"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_margin="0dp"
@@ -92,7 +92,7 @@
                     android:padding="0dp" >
 
                     <LinearLayout
-                        android:id="@+id/buttonNeedCreditFour"
+                        android:id="@+id/buttonNecesitoUnCredito"
                         android:layout_width="fill_parent"
                         android:layout_height="fill_parent"
                         android:layout_gravity="center"
@@ -126,6 +126,7 @@
                     android:visibility="visible" >
 
                     <LinearLayout
+                        android:id="@+id/buttonQueOportunidadesHay"
                         android:layout_width="0dp"
                         android:layout_height="fill_parent"
                         android:layout_gravity="center"
@@ -153,6 +154,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/buttonConQuienHablo"
                         android:layout_width="0dp"
                         android:layout_height="fill_parent"
                         android:layout_gravity="center"
@@ -190,6 +192,7 @@
                     android:visibility="visible" >
 
                     <LinearLayout
+                        android:id="@+id/buttonComoMePuedeAyudarBancoldex"
                         android:layout_width="0dp"
                         android:layout_height="fill_parent"
                         android:layout_gravity="center"
@@ -212,11 +215,12 @@
                             android:layout_height="wrap_content"
                             android:layout_alignParentBottom="true"
                             android:layout_centerHorizontal="true"
-                            android:text="Que oportunidades hay?"
+                            android:text="Como me puede ayudar Bancoldex?"
                             android:textColor="#9E9E9E" />
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/buttonInteligenciaFinanciera"
                         android:layout_width="0dp"
                         android:layout_height="fill_parent"
                         android:layout_gravity="center"
@@ -239,14 +243,14 @@
                             android:layout_height="wrap_content"
                             android:layout_alignParentBottom="true"
                             android:layout_centerHorizontal="true"
-                            android:text="Que oportunidades hay?"
+                            android:text="Inteligencia Financiera"
                             android:textColor="#9E9E9E" />
                     </LinearLayout>
                 </TableRow>
             </TableLayout>
 
             <TableLayout
-                android:id="@+id/tableMenuFourButtons"
+                android:id="@+id/tableNecesitoUnCredito"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_margin="0dp"
@@ -378,6 +382,669 @@
                     </LinearLayout>
                 </TableRow>
             </TableLayout>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <!-- Y Que oportunidades hay -->
+            
+            
+            
+            <TableLayout
+                android:id="@+id/tableQueOportunidadesHay"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_margin="0dp"
+                android:padding="0dp" >
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="0dp"
+                    android:padding="0dp" >
+
+                    <LinearLayout
+                        android:id="@+id/buttonNeedCreditFour"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:background="@drawable/big_button_normal"
+                        android:gravity="center"
+                        android:orientation="horizontal" >
+
+                        <ImageView
+                            android:id="@+id/xIcon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingRight="5dp"
+                            android:src="@drawable/unamonedamono" />
+
+                        <TextView
+                            android:id="@+id/xSettingsTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Y qué oportunidades hay?" />
+                    </LinearLayout>
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/firstConfig_1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="0dp"
+                    android:layout_weight="2"
+                    android:padding="0dp"
+                    android:visibility="visible" >
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:background="@drawable/menu_normal_button"
+                        android:gravity="center"
+                        android:orientation="vertical" >
+
+                        <ImageView
+                            android:id="@+id/xIcon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/oportunidades" />
+
+                        <TextView
+                            android:id="@+id/xSettingsTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:text="Convocatorias Actuales"
+                            android:textColor="#9E9E9E" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:background="@drawable/menu_normal_button"
+                        android:gravity="center"
+                        android:orientation="vertical" >
+
+                        <ImageView
+                            android:id="@+id/xIcon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/conquienhablo" />
+
+                        <TextView
+                            android:id="@+id/xSettingsTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:text="Programas especiales Bancoldex"
+                            android:textColor="#9E9E9E" />
+                    </LinearLayout>
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/firstConfig_2"
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="0dp"
+                    android:layout_weight="2"
+                    android:padding="0dp"
+                    android:visibility="visible" >
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:background="@drawable/menu_normal_button"
+                        android:gravity="center"
+                        android:orientation="vertical" >
+
+                        <ImageView
+                            android:id="@+id/xIcon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/nosotros" />
+
+                        <TextView
+                            android:id="@+id/xSettingsTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:text="Eventos cerca de mi (geolocalizacion, calendario)"
+                            android:textColor="#9E9E9E" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:background="@drawable/menu_normal_button"
+                        android:gravity="center"
+                        android:orientation="vertical" >
+
+                        <ImageView
+                            android:id="@+id/xIcon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/dolar" />
+
+                        <TextView
+                            android:id="@+id/xSettingsTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:text="Experiencias de Exito"
+                            android:textColor="#9E9E9E" />
+                    </LinearLayout>
+                </TableRow>
+            </TableLayout>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <!-- Con quien hablo? -->
+            
+            <TableLayout
+                android:id="@+id/tableConQuienHablo"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_margin="0dp"
+                android:padding="0dp" >
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="0dp"
+                    android:padding="0dp" >
+
+                    <LinearLayout
+                        android:id="@+id/buttonNeedCredit"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:background="@drawable/big_button_selected"
+                        android:gravity="center"
+                        android:orientation="horizontal" >
+
+                        <ImageView
+                            android:id="@+id/xIconFour"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingRight="5dp"
+                            android:src="@drawable/unamonedamono" />
+
+                        <TextView
+                            android:id="@+id/xSettingsTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Con quien hablo?" />
+                    </LinearLayout>
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/secondConfig_1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="0dp"
+                    android:layout_weight="4"
+                    android:padding="0dp" >
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:background="@drawable/menu_normal_button"
+                        android:gravity="center"
+                        android:orientation="vertical" >
+
+                        <ImageView
+                            android:id="@+id/xIcon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/oportunidades" />
+
+                        <TextView
+                            android:id="@+id/xSettingsTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:gravity="center"
+                            android:text="Donde encuentro los bancos aliados?"
+                            android:textColor="#9E9E9E" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:background="@drawable/menu_normal_button"
+                        android:gravity="center"
+                        android:orientation="vertical" >
+
+                        <ImageView
+                            android:id="@+id/xIcon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_centerHorizontal="true"
+                            android:paddingBottom="10dp"
+                            android:src="@drawable/conquienhablo" />
+
+                        <TextView
+                            android:id="@+id/xSettingsTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:gravity="center"
+                            android:text="Solicitar Cita con un asesor"
+                            android:textColor="#9E9E9E" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:background="@drawable/menu_normal_button"
+                        android:gravity="center"
+                        android:orientation="vertical" >
+
+                        <ImageView
+                            android:id="@+id/xIcon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/dolar" />
+
+                        <TextView
+                            android:id="@+id/xSettingsTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:gravity="center"
+                            android:text="Asesoría Online"
+                            android:textColor="#9E9E9E" />
+                    </LinearLayout>
+                </TableRow>
+            </TableLayout>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <!-- Como me puede ayudar Bancoldex? -->
+            
+            <TableLayout
+                android:id="@+id/tableComoMePuedeAyudarBancoldex"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_margin="0dp"
+                android:padding="0dp" >
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="0dp"
+                    android:padding="0dp" >
+
+                    <LinearLayout
+                        android:id="@+id/buttonNeedCredit"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:background="@drawable/big_button_selected"
+                        android:gravity="center"
+                        android:orientation="horizontal" >
+
+                        <ImageView
+                            android:id="@+id/xIconFour"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingRight="5dp"
+                            android:src="@drawable/unamonedamono" />
+
+                        <TextView
+                            android:id="@+id/xSettingsTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Como me puede ayudar Bancoldex?" />
+                    </LinearLayout>
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/secondConfig_1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="0dp"
+                    android:layout_weight="4"
+                    android:padding="0dp" >
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:background="@drawable/menu_normal_button"
+                        android:gravity="center"
+                        android:orientation="vertical" >
+
+                        <ImageView
+                            android:id="@+id/xIcon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/oportunidades" />
+
+                        <TextView
+                            android:id="@+id/xSettingsTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:gravity="center"
+                            android:text="Funciones de Bancoldex"
+                            android:textColor="#9E9E9E" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:background="@drawable/menu_normal_button"
+                        android:gravity="center"
+                        android:orientation="vertical" >
+
+                        <ImageView
+                            android:id="@+id/xIcon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_centerHorizontal="true"
+                            android:paddingBottom="10dp"
+                            android:src="@drawable/conquienhablo" />
+
+                        <TextView
+                            android:id="@+id/xSettingsTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:gravity="center"
+                            android:text="FAQ"
+                            android:textColor="#9E9E9E" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:background="@drawable/menu_normal_button"
+                        android:gravity="center"
+                        android:orientation="vertical" >
+
+                        <ImageView
+                            android:id="@+id/xIcon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/dolar" />
+
+                        <TextView
+                            android:id="@+id/xSettingsTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:gravity="center"
+                            android:text="Noticias de bancoldex y sus redes sociales"
+                            android:textColor="#9E9E9E" />
+                    </LinearLayout>
+                </TableRow>
+            </TableLayout>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <TableLayout
+                android:id="@+id/tableInteligenciaFinanciera"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_margin="0dp"
+                android:padding="0dp" >
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="0dp"
+                    android:padding="0dp" >
+
+                    <LinearLayout
+                        android:id="@+id/buttonNeedCreditFour"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:background="@drawable/big_button_normal"
+                        android:gravity="center"
+                        android:orientation="horizontal" >
+
+                        <ImageView
+                            android:id="@+id/xIcon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingRight="5dp"
+                            android:src="@drawable/unamonedamono" />
+
+                        <TextView
+                            android:id="@+id/xSettingsTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Inteligencia Financiera" />
+                    </LinearLayout>
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/firstConfig_1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="0dp"
+                    android:layout_weight="2"
+                    android:padding="0dp"
+                    android:visibility="visible" >
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:background="@drawable/menu_normal_button"
+                        android:gravity="center"
+                        android:orientation="vertical" >
+
+                        <ImageView
+                            android:id="@+id/xIcon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/oportunidades" />
+
+                        <TextView
+                            android:id="@+id/xSettingsTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:text="Datos financieros útiles"
+                            android:textColor="#9E9E9E" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:background="@drawable/menu_normal_button"
+                        android:gravity="center"
+                        android:orientation="vertical" >
+
+                        <ImageView
+                            android:id="@+id/xIcon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/conquienhablo" />
+
+                        <TextView
+                            android:id="@+id/xSettingsTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:text="Conviertete en un experto en finanzas"
+                            android:textColor="#9E9E9E" />
+                    </LinearLayout>
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/firstConfig_2"
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="0dp"
+                    android:layout_weight="2"
+                    android:padding="0dp"
+                    android:visibility="visible" >
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:background="@drawable/menu_normal_button"
+                        android:gravity="center"
+                        android:orientation="vertical" >
+
+                        <ImageView
+                            android:id="@+id/xIcon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/nosotros" />
+
+                        <TextView
+                            android:id="@+id/xSettingsTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:text="Tips Claves"
+                            android:textColor="#9E9E9E" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:background="@drawable/menu_normal_button"
+                        android:gravity="center"
+                        android:orientation="vertical" >
+
+                        <ImageView
+                            android:id="@+id/xIcon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/dolar" />
+
+                        <TextView
+                            android:id="@+id/xSettingsTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:text="Llámanos"
+                            android:textColor="#9E9E9E" />
+                    </LinearLayout>
+                </TableRow>
+            </TableLayout>
+            
+            
+            
+            
+            
         </RelativeLayout>
         <!-- End Panel bottom menu -->
     </LinearLayout>
