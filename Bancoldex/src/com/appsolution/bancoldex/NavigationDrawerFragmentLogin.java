@@ -1,5 +1,6 @@
 package com.appsolution.bancoldex;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Configuration;
@@ -8,7 +9,6 @@ import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -47,6 +47,9 @@ public class NavigationDrawerFragmentLogin extends Fragment {
 
 	String userIntermediario = "intermediario";
 	String passwordIntermediario = "123";
+	
+	String userEjecutivoCuenta = "ecuenta";
+	String passwordEjecutivoCuenta = "123";
 
 	public NavigationDrawerFragmentLogin() {
 	}
@@ -109,6 +112,10 @@ public class NavigationDrawerFragmentLogin extends Fragment {
 				Toast.makeText(getActivity(), "Intermediario", Toast.LENGTH_SHORT).show();
 				Intent intent = new Intent(getActivity(), LoggedIntermediarioActivity.class);
 				startActivity(intent);
+			}else if (textUserEditText.equals(userEjecutivoCuenta) && textPasswordEditText.equals(passwordEjecutivoCuenta)) {
+				Toast.makeText(getActivity(), "Ejecutivo Cuenta", Toast.LENGTH_SHORT).show();
+				Intent intent = new Intent(getActivity(), LoggedEjecutivoCuentaActivity.class);
+				startActivity(intent);
 			}
 		}
 
@@ -139,6 +146,10 @@ public class NavigationDrawerFragmentLogin extends Fragment {
 		// set up the drawer's list view with items and click listener
 
 
+		ActionBar actionBar = getActionBar();
+		actionBar.setDisplayHomeAsUpEnabled(true);
+		actionBar.setHomeButtonEnabled(true);
+		
 		// ActionBarDrawerToggle ties together the the proper interactions
 		// between the navigation drawer and the action bar app icon.
 		mDrawerToggle = new ActionBarDrawerToggle(getActivity(), /* host Activity */
@@ -189,6 +200,10 @@ public class NavigationDrawerFragmentLogin extends Fragment {
 		});
 
 		mDrawerLayout.setDrawerListener(mDrawerToggle);
+	}
+	
+	private ActionBar getActionBar() {
+		return getActivity().getActionBar();
 	}
 
 	@Override
