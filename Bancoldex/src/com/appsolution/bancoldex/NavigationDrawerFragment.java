@@ -1,6 +1,7 @@
 package com.appsolution.bancoldex;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.graphics.Color;
@@ -18,8 +19,10 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import de.passsy.holocircularprogressbar.HoloCircularProgressBar;
 
 /**
@@ -113,6 +116,16 @@ public class NavigationDrawerFragment extends Fragment {
 		mHoloCircularProgressBar2.setThumbEnabled(false);
 		mHoloCircularProgressBar2.setProgressColor(Color.argb(255, 145, 183, 17));
 		mHoloCircularProgressBar2.setProgressBackgroundColor(Color.TRANSPARENT);
+
+		TextView textLogout = (TextView) mainLayout.findViewById(R.id.textViewLogout);
+		textLogout.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+				Intent intent = new Intent(getActivity(), HomeActivity.class);
+				startActivity(intent);
+			}
+		});
 
 		return mainLayout;
 

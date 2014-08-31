@@ -109,6 +109,8 @@ public class NavigationDrawerFragmentLogin extends Fragment {
 		if (dataValid) {
 			if (textUserEditText.equals(userEmpresario) && textPasswordEditText.equals(passwordEmpresario)) {
 				Toast.makeText(getActivity(), "Empresario", Toast.LENGTH_SHORT).show();
+				Intent intent = new Intent(getActivity(), LoggedEmpresarioActivity.class);
+				startActivity(intent);
 			} else if (textUserEditText.equals(userIntermediario) && textPasswordEditText.equals(passwordIntermediario)) {
 				Toast.makeText(getActivity(), "Intermediario", Toast.LENGTH_SHORT).show();
 				Intent intent = new Intent(getActivity(), LoggedIntermediarioActivity.class);

@@ -165,7 +165,7 @@
             android:src="@drawable/separador_large_slide_menu" />
         
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/textViewLogout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#D16A69"
