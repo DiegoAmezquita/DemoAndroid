@@ -155,6 +155,12 @@ public class HomeActivity extends ActionBarActivity implements NavigationDrawerF
         });
 	}
 	
+	@Override
+	public void onBackPressed() {
+		loadFiveItems();
+
+	}
+	
 	public void loadFourItems() {
 		final int mShortAnimationDuration = getResources().getInteger(android.R.integer.config_longAnimTime);
 		
