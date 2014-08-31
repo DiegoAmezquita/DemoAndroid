@@ -64,8 +64,205 @@
                     android:id="@+id/containerContentTwo"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
+            		android:gravity="bottom|right"
                     android:background="@drawable/image_background"
                     android:orientation="vertical" >
+                    <LinearLayout
+                        android:id="@+id/firstQuestionAsesor" 
+	                    android:layout_width="fill_parent"
+	                    android:layout_height="fill_parent"
+	            		android:gravity="bottom|right"
+	                    android:orientation="vertical">
+                       <TextView android:layout_width="350dp"
+	                    android:layout_height="40dp"
+	                   	android:text=""
+	                   	android:background="@drawable/lbl_comoestuempresa"
+	                    />
+                       <LinearLayout android:layout_width="400dp"
+	                    android:layout_height="wrap_content"
+	                    android:orientation="horizontal">
+                           <Button
+                                android:id="@+id/buttonEmpExportadora"
+                               android:layout_width="200dp"
+	                    android:layout_height="55dp"
+	                    android:background="@drawable/btn_empresaexportadora"/>
+                           <Button
+                               android:id="@+id/buttonEmpNacional"
+                               android:layout_width="200dp"
+	                    android:layout_height="55dp"
+	                    android:background="@drawable/btn_mercadonacional"/>
+                       </LinearLayout>
+                       <LinearLayout android:layout_width="fill_parent"
+                           android:padding="10dp"
+	                    android:layout_height="wrap_content"
+	                    android:orientation="horizontal"
+	                    android:gravity="center">
+                          <LinearLayout android:layout_width="500dp"
+	                    android:layout_height="wrap_content"
+	                    android:orientation="horizontal"
+	                    android:background="@drawable/slide_menu_background_bar">
+                          
+                       </LinearLayout>
+                       </LinearLayout>
+                    </LinearLayout>
+                    <!-- Second Question -->
+                    <LinearLayout
+                        android:id="@+id/secondQuestionAsesor" 
+	                    android:layout_width="fill_parent"
+	                    android:layout_height="fill_parent"
+	            		android:gravity="bottom|right"
+	            		android:visibility="gone"
+	                    
+	                    android:orientation="vertical">
+                       <TextView android:layout_width="350dp"
+	                    android:layout_height="40dp"
+	                   	android:text=""
+	                   	android:background="@drawable/lbl_dondeestaubicada"
+	                    />
+                       <LinearLayout android:layout_width="400dp"
+	                    android:layout_height="wrap_content"
+	                   	android:gravity="right"
+	                    android:orientation="horizontal">
+                          <Spinner android:layout_width="300dp"
+                               android:layout_height="wrap_content"
+                               android:id="@+id/comboBoxCiudad"
+                               android:background="@drawable/input_ciudades"
+                              />
+                       </LinearLayout>
+                       <LinearLayout android:layout_width="fill_parent"
+                           android:padding="10dp"
+	                    android:layout_height="wrap_content"
+	                    android:orientation="horizontal"
+	                    android:gravity="center">
+	                          <LinearLayout android:layout_width="500dp"
+		                    android:layout_height="wrap_content"
+		                    android:orientation="horizontal"
+		                    android:background="@drawable/slide_menu_background_bar">
+	                          
+	                       </LinearLayout>
+                       </LinearLayout>
+                    </LinearLayout>
+                    <!-- Third Question -->
+                    <LinearLayout
+                        android:id="@+id/thirdQuestionAsesor" 
+	                    android:layout_width="fill_parent"
+	                    android:layout_height="fill_parent"
+	            		android:gravity="bottom|right"
+	            		android:visibility="gone"
+	                    
+	                    android:orientation="vertical">
+                       <TextView android:layout_width="350dp"
+	                    android:layout_height="40dp"
+	                   	android:text=""
+	                   	android:background="@drawable/lbl_cualtamanoempresa"
+	                    />
+                       <LinearLayout android:layout_width="fill_parent"
+	                    android:layout_height="wrap_content"
+	                   	android:gravity="center"
+	                    android:orientation="horizontal">
+                          <Button
+                                android:id="@+id/buttonMicroempresa"
+                               android:layout_width="100dp"
+	                    android:layout_height="30dp"
+	                    android:background="@drawable/btn_microempresa"/>
+                           <Button
+                               android:id="@+id/buttonPequenaEmpresa"
+                               android:layout_width="100dp"
+	                    android:layout_height="30dp"
+	                    android:background="@drawable/btn_pequenaempresa"/>
+                           <Button
+                                android:id="@+id/buttonMedianaEmpresa"
+                               android:layout_width="100dp"
+	                    android:layout_height="30dp"
+	                    android:background="@drawable/btn_medianaempresa"/>
+                           <Button
+                               android:id="@+id/buttonGranEmpresa"
+                               android:layout_width="100dp"
+	                    android:layout_height="30dp"
+	                    android:background="@drawable/btn_granempresa"/>
+                       </LinearLayout>
+                       <LinearLayout android:layout_width="fill_parent"
+                           android:padding="10dp"
+	                    android:layout_height="wrap_content"
+	                    android:orientation="horizontal"
+	                    android:gravity="center">
+                          <LinearLayout android:layout_width="500dp"
+	                    android:layout_height="wrap_content"
+	                    android:orientation="horizontal"
+	                    android:background="@drawable/slide_menu_background_bar">
+                          
+                       </LinearLayout>
+                       </LinearLayout>
+                    </LinearLayout>
+                    <!-- Fourth Question -->
+                    <LinearLayout
+                        android:id="@+id/fourtQuestionAsesor" 
+	                    android:layout_width="fill_parent"
+	                    android:layout_height="fill_parent"
+	            		android:gravity="bottom|right"
+	            		android:visibility="gone"
+	                   
+	                    android:orientation="vertical">
+                       <TextView android:layout_width="350dp"
+	                    android:layout_height="40dp"
+	                   	android:text=""
+	                   	android:background="@drawable/lbl_necesidadesdetuempresa"
+	                    />
+                       <LinearLayout android:layout_width="fill_parent"
+	                    android:layout_height="wrap_content"
+	                   	android:gravity="center"
+	                    android:orientation="horizontal">
+                          <TableLayout android:layout_width="fill_parent"
+	                    android:layout_height="wrap_content">
+                              <TableRow android:layout_width="fill_parent"
+	                    android:layout_height="wrap_content">
+                                  <Button android:layout_width="0dp"
+                                      android:layout_height="35dp"
+                                      android:layout_weight="1"
+                                      android:textSize="10sp"
+                                      android:gravity="left"
+                                      android:background="@drawable/btn_necesidades"
+                                      android:text="\tAtender costos y gastos operativos"/>
+                                  <Button android:layout_width="0dp"
+                                      android:layout_height="35dp"
+                                      android:textSize="10sp"
+                                      android:layout_weight="1"
+                                      android:gravity="center"
+                                      android:background="@drawable/btn_necesidades"
+                                      android:text="\tFinanciar y mitigar el riesgo de sus ventas"/>
+                              </TableRow>
+                              <TableRow android:layout_width="fill_parent"
+	                    android:layout_height="wrap_content">
+                                  <Button android:layout_width="0dp"
+                                      android:layout_height="35dp"
+                                      android:layout_weight="1"
+                                      android:gravity="left"
+                                      android:textSize="10sp"
+                                      android:background="@drawable/btn_necesidades"
+                                      android:text="\tInvertir en propiedad planta y equipos"/>
+                                  <Button android:layout_width="0dp"
+                                      android:layout_height="35dp"
+                                      android:layout_weight="1"
+                                      android:textSize="10sp"
+                                      android:gravity="center"
+                                      android:background="@drawable/btn_necesidades"
+                                      android:text="\tActualización y formación empresarial"/>
+                              </TableRow>
+                          </TableLayout>
+                       </LinearLayout>
+                       <LinearLayout android:layout_width="fill_parent"
+                           android:padding="10dp"
+	                    android:layout_height="wrap_content"
+	                    android:orientation="horizontal"
+	                    android:gravity="center">
+                          <LinearLayout android:layout_width="500dp"
+	                    android:layout_height="wrap_content"
+	                    android:orientation="horizontal"
+	                    android:background="@drawable/slide_menu_background_bar">
+                          
+                       </LinearLayout>
+                       </LinearLayout>
+                    </LinearLayout>
                 </LinearLayout>
             </FrameLayout>
         </RelativeLayout>

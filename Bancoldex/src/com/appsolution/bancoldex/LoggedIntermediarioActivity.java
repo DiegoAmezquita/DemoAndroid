@@ -16,9 +16,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Spinner;
 import android.widget.TableLayout;
 
 public class LoggedIntermediarioActivity extends ActionBarActivity implements NavigationDrawerFragment.NavigationDrawerCallbacks {
@@ -52,6 +56,83 @@ public class LoggedIntermediarioActivity extends ActionBarActivity implements Na
 	
 	ImageView imagetViewAnimate;
 	
+	
+	private LinearLayout firstQuestionAsesor;
+	private LinearLayout secondQuestionAsesor;
+	private LinearLayout thirdQuestionAsesor;
+	private LinearLayout fourQuestionAsesor;
+	private Spinner spinnerComboCiudad;
+	
+	private void initializeQuestionsAsesor(){
+		firstQuestionAsesor=(LinearLayout)findViewById(R.id.firstQuestionAsesor);
+		secondQuestionAsesor=(LinearLayout)findViewById(R.id.secondQuestionAsesor);
+		thirdQuestionAsesor=(LinearLayout)findViewById(R.id.thirdQuestionAsesor);
+		fourQuestionAsesor=(LinearLayout)findViewById(R.id.fourtQuestionAsesor);
+		OnClickListener clickComoEsTu=new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				hideAllQuestions();
+				secondQuestionAsesor.setVisibility(View.VISIBLE);
+			}
+		};
+		Button buttonExportadora=(Button)findViewById(R.id.buttonEmpExportadora);
+		buttonExportadora.setOnClickListener(clickComoEsTu);
+		Button buttonNacional=(Button)findViewById(R.id.buttonEmpNacional);
+		buttonNacional.setOnClickListener(clickComoEsTu);
+		
+		//====================================
+		 String[] array_spinner=new String[5];
+	        array_spinner[0]=" Bogotá";
+	        array_spinner[1]="Medellin";
+	        array_spinner[2]="Cali";
+	        array_spinner[3]="Bucaramanga";
+	        array_spinner[4]="Barranquilla";
+		spinnerComboCiudad=(Spinner)findViewById(R.id.comboBoxCiudad);
+		spinnerComboCiudad.setOnItemSelectedListener(new AdapterView. OnItemSelectedListener() {
+
+			@Override
+			public void onItemSelected(AdapterView<?> parent, View view,
+					int position, long id) {
+				if(position>0){
+				hideAllQuestions();
+				thirdQuestionAsesor.setVisibility(View.VISIBLE);
+				}
+			}
+
+			@Override
+			public void onNothingSelected(AdapterView<?> parent) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
+		ArrayAdapter adapter = new ArrayAdapter(this,
+		        android.R.layout.simple_selectable_list_item, array_spinner);
+		        spinnerComboCiudad.setAdapter(adapter);
+		        OnClickListener onclickNecesidades=new OnClickListener() {
+					
+					@Override
+					public void onClick(View v) {
+						hideAllQuestions();
+						fourQuestionAsesor.setVisibility(View.VISIBLE);
+					}
+				};
+		        
+		        Button buttonMicro=(Button)findViewById(R.id.buttonMicroempresa);
+		        buttonMicro.setOnClickListener(onclickNecesidades);
+				Button buttomMediana=(Button)findViewById(R.id.buttonMedianaEmpresa);
+				buttomMediana.setOnClickListener(onclickNecesidades);
+	}
+	
+	private void hideAllQuestions(){
+		firstQuestionAsesor.setVisibility(View.GONE);
+		secondQuestionAsesor.setVisibility(View.GONE);
+		thirdQuestionAsesor.setVisibility(View.GONE);
+		fourQuestionAsesor.setVisibility(View.GONE);
+	}
+	
+	
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -82,6 +163,16 @@ public class LoggedIntermediarioActivity extends ActionBarActivity implements Na
 
 		actionBar.setCustomView(v);
 		// showBottomMenuFiveButtons();
+		
+		LinearLayout buttonOficina=(LinearLayout)findViewById(R.id.buttonOportunidades);
+		buttonOficina.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				getSupportFragmentManager().findFragmentById(R.id.map).getView().setVisibility(View.VISIBLE);
+				
+			}
+		});
 
 		buttonTestFive = (LinearLayout) findViewById(R.id.buttonNeedCreditFour);
 		buttonTestFive.setOnClickListener(new OnClickListener() {
@@ -252,6 +343,7 @@ public class LoggedIntermediarioActivity extends ActionBarActivity implements Na
 
 		animateImageContentOne();
 		hideAllTables();
+		initializeQuestionsAsesor();
 	}
 	
 	private void hideAllTables(){
